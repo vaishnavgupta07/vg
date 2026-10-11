@@ -409,19 +409,24 @@
         document.addEventListener("DOMContentLoaded", () => {
             const savedName = sessionStorage.getItem('visitorName');
             
+            // अगर नाम सेव नहीं है (यानी यूजर ने अभी-अभी वेबसाइट खोली है)
             if (!savedName) {
                 setTimeout(() => {
+                    document.getElementById('modal-step-1').classList.remove('hidden');
+                    document.getElementById('modal-step-2').classList.add('hidden');
+                    document.getElementById('visitor-name').value = ''; 
                     document.getElementById('welcome-modal').classList.remove('hidden');
                 }, 500); 
             } else {
+                // अगर नाम सेव है (यानी यूजर ने सिर्फ पेज रिफ्रेश किया है)
                 updateNavName(savedName);
             }
         });
 
-      function submitName() {
+        function submitName() {
             const nameInput = document.getElementById('visitor-name').value.trim();
             
-            // 1. अगर खाली छोड़ दिया हो
+            // 1. अगर खाली छोड़ दिया हो
             if (nameInput === "") {
                 alert("Please enter your name!");
                 return;
@@ -442,12 +447,12 @@
 
             // 4. अगर कोई आपका नाम (Vaishnav / VSG) डाले 
             const lowerName = nameInput.toLowerCase();
-            if (lowerName.includes("vaishnav") || lowerName.includes("vsg")) {
+            if (lowerName.includes("vaishnav") || lowerName.includes("vsg") || lowerName.includes("gupta")) {
                 alert("Hey! That's my name. Please enter YOUR name! 😄");
                 return;
             }
 
-            // अगर सब कुछ सही है, तो आगे बढ़ें
+            // अगर सब कुछ सही है, तो आगे बढ़ें
             const name = nameInput;
             
             document.getElementById('modal-step-1').classList.add('hidden');
@@ -457,21 +462,6 @@
             sessionStorage.setItem('visitorName', name);
             updateNavName(name);
 
-            // --- GOOGLE SHEETS INTEGRATION START ---
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzi6LiuI-TkGBGCRk1kfmyu0FKYRVeTsu-3m0v_D3vnXXiIlEs-f6zlRmHj1PzXI2W61A/exec'; 
-            
-            const formData = new FormData();
-            formData.append('name', name);
-
-            fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => console.log('Name saved successfully!'))
-                .catch(error => console.error('Error!', error.message));
-            // --- GOOGLE SHEETS INTEGRATION END ---
-
-            setTimeout(() => {
-                document.getElementById('welcome-modal').classList.add('hidden');
-            }, 2500);
-        }
             // --- GOOGLE SHEETS INTEGRATION START ---
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzi6LiuI-TkGBGCRk1kfmyu0FKYRVeTsu-3m0v_D3vnXXiIlEs-f6zlRmHj1PzXI2W61A/exec'; 
             
