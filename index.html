@@ -418,9 +418,37 @@
             }
         });
 
-        function submitName() {
+      function submitName() {
             const nameInput = document.getElementById('visitor-name').value.trim();
-            const name = nameInput ? nameInput : "Guest"; 
+            
+            // 1. अगर खाली छोड़ दिया हो
+            if (nameInput === "") {
+                alert("Please enter your name!");
+                return;
+            }
+
+            // 2. अगर नाम में नंबर या सिंबल डाले हों (सिर्फ A-Z और a-z allowed है)
+            const nameRegex = /^[A-Za-z\s]+$/;
+            if (!nameRegex.test(nameInput)) {
+                alert("Please enter a valid name! (Numbers and symbols are not allowed)");
+                return;
+            }
+
+            // 3. अगर नाम बहुत छोटा हो (कम से कम 3 अक्षर होने चाहिए)
+            if (nameInput.length < 3) {
+                alert("Name is too short! Please enter your full name.");
+                return;
+            }
+
+            // 4. अगर कोई आपका नाम (Vaishnav / VSG) डाले 
+            const lowerName = nameInput.toLowerCase();
+            if (lowerName.includes("vaishnav") || lowerName.includes("vsg")) {
+                alert("Hey! That's my name. Please enter YOUR name! 😄");
+                return;
+            }
+
+            // अगर सब कुछ सही है, तो आगे बढ़ें
+            const name = nameInput;
             
             document.getElementById('modal-step-1').classList.add('hidden');
             document.getElementById('modal-step-2').classList.remove('hidden');
@@ -429,6 +457,21 @@
             sessionStorage.setItem('visitorName', name);
             updateNavName(name);
 
+            // --- GOOGLE SHEETS INTEGRATION START ---
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzi6LiuI-TkGBGCRk1kfmyu0FKYRVeTsu-3m0v_D3vnXXiIlEs-f6zlRmHj1PzXI2W61A/exec'; 
+            
+            const formData = new FormData();
+            formData.append('name', name);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => console.log('Name saved successfully!'))
+                .catch(error => console.error('Error!', error.message));
+            // --- GOOGLE SHEETS INTEGRATION END ---
+
+            setTimeout(() => {
+                document.getElementById('welcome-modal').classList.add('hidden');
+            }, 2500);
+        }
             // --- GOOGLE SHEETS INTEGRATION START ---
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzi6LiuI-TkGBGCRk1kfmyu0FKYRVeTsu-3m0v_D3vnXXiIlEs-f6zlRmHj1PzXI2W61A/exec'; 
             
