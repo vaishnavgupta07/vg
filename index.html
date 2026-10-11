@@ -394,23 +394,28 @@
             });
         });
 
-        // Welcome Popup Logic
-        function updateNavName(name) {
+        // Welcome Popup & Returning Visitor Logic
+        function updateNavName(name, isReturning) {
             const desktopName = document.getElementById('nav-visitor-name-desktop');
             const mobileName = document.getElementById('nav-visitor-name-mobile');
+            
+            // agar purana banda hai to Welcome back, naya hai to Hi
+            const greeting = isReturning ? "Welcome back, " : "Hi, ";
+            
             if (desktopName && mobileName) {
-                desktopName.innerText = "Hi, " + name + " 👋";
+                desktopName.innerText = greeting + name + " 👋";
                 desktopName.classList.remove('hidden');
-                mobileName.innerText = "Hi, " + name + " 👋";
+                mobileName.innerText = greeting + name + " 👋";
                 mobileName.classList.remove('hidden');
             }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            const savedName = sessionStorage.getItem('visitorName');
+            // sessionStorage ki jagah localStorage ka istemal
+            const savedName = localStorage.getItem('visitorName');
             
-            // अगर नाम सेव नहीं है (यानी यूजर ने अभी-अभी वेबसाइट खोली है)
             if (!savedName) {
+                // Naya visitor hai - popup dikhao
                 setTimeout(() => {
                     document.getElementById('modal-step-1').classList.remove('hidden');
                     document.getElementById('modal-step-2').classList.add('hidden');
@@ -418,61 +423,63 @@
                     document.getElementById('welcome-modal').classList.remove('hidden');
                 }, 500); 
             } else {
-                // अगर नाम सेव है (यानी यूजर ने सिर्फ पेज रिफ्रेश किया है)
-                updateNavName(savedName);
+                // Purana visitor wapas aaya hai - popup mat dikhao, sirf 'Welcome back' kaho
+                updateNavName(savedName, true);
             }
         });
 
         function submitName() {
             const nameInput = document.getElementById('visitor-name').value.trim();
             
-            // 1. अगर खाली छोड़ दिया हो
+            // 1. Empty Check
             if (nameInput === "") {
                 alert("Please enter your name!");
                 return;
             }
 
-            // 2. अगर नाम में नंबर या सिंबल डाले हों (सिर्फ A-Z और a-z allowed है)
+            // 2. Numbers/Symbols Check
             const nameRegex = /^[A-Za-z\s]+$/;
             if (!nameRegex.test(nameInput)) {
                 alert("Please enter a valid name! (Numbers and symbols are not allowed)");
                 return;
             }
 
-            // 3. अगर नाम बहुत छोटा हो (कम से कम 3 अक्षर होने चाहिए)
+            // 3. Length Check
             if (nameInput.length < 3) {
                 alert("Name is too short! Please enter your full name.");
                 return;
             }
 
-            // 4. अगर कोई आपका नाम (Vaishnav / VSG) डाले 
+            // 4. Owner Check
             const lowerName = nameInput.toLowerCase();
             if (lowerName.includes("vaishnav") || lowerName.includes("vsg") || lowerName.includes("gupta")) {
                 alert("Hey! That's my name. Please enter YOUR name! 😄");
                 return;
             }
+
             // 5. Gibberish (Random Typing) Filter
-            const hasVowel = /[aeiouyAEIOUY]/.test(nameInput); // नाम में Vowel होना ज़रूरी है
-            const threeConsecutive = /(.)\1{2,}/.test(nameInput); // 3 अक्षर लगातार (aaa) नहीं होने चाहिए
-            const fourConsonants = /[^aeiouyAEIOUY\s]{4,}/.test(nameInput); // 4 consonants (asdf) नहीं होने चाहिए
-            const startWithDoubleConsonant = /^([^aeiouyAEIOUY\s])\1/i.test(nameInput); // नाम jji, kkl से शुरू नहीं होना चाहिए
+            const hasVowel = /[aeiouyAEIOUY]/.test(nameInput);
+            const threeConsecutive = /(.)\1{2,}/.test(nameInput);
+            const fourConsonants = /[^aeiouyAEIOUY\s]{4,}/.test(nameInput);
+            const startWithDoubleConsonant = /^([^aeiouyAEIOUY\s])\1/i.test(nameInput);
 
             if (!hasVowel || threeConsecutive || fourConsonants || startWithDoubleConsonant) {
                 alert("Please enter a proper real name! (Random typing is not allowed 🤨)");
                 return;
             }
 
-            // अगर सब कुछ सही है, तो आगे बढ़ें
+            // Agar naam sahi hai, to aage badho
             const name = nameInput;
             
             document.getElementById('modal-step-1').classList.add('hidden');
             document.getElementById('modal-step-2').classList.remove('hidden');
             document.getElementById('display-name').innerText = name;
 
-            sessionStorage.setItem('visitorName', name);
-            updateNavName(name);
+            // Naam ko hamesha ke liye save karna (localStorage me)
+            localStorage.setItem('visitorName', name);
+            updateNavName(name, false); // false matlab naya visitor (Hi bolega)
 
-            // --- GOOGLE SHEETS INTEGRATION START ---
+            // --- GOOGLE SHEETS INTEGRATION (Sirf naye logon ke liye chalega) ---
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzi6LiuI-TkGBGCRk1kfmyu0FKYRVeTsu-3m0v_D3vnXXiIlEs-f6zlRmHj1PzXI2W61A/exec'; 
             
             const formData = new FormData();
@@ -481,7 +488,7 @@
             fetch(scriptURL, { method: 'POST', body: formData })
                 .then(response => console.log('Name saved successfully!'))
                 .catch(error => console.error('Error!', error.message));
-            // --- GOOGLE SHEETS INTEGRATION END ---
+            // -------------------------------------------------------------
 
             setTimeout(() => {
                 document.getElementById('welcome-modal').classList.add('hidden');
