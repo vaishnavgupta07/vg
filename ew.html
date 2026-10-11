@@ -28,6 +28,11 @@
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         body { font-family: 'Inter', sans-serif; }
+        
+        /* For removing default arrows in details tag */
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-500 selection:text-white">
@@ -53,334 +58,574 @@
         
         <div class="text-center mb-10">
             <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Extension Work (Study Notes)</h1>
-            <p class="text-lg text-gray-500">Click on any chapter below to view the questions and answers.</p>
+            <p class="text-lg text-gray-500">Click on a chapter to see questions, then click a question to view the exact answer.</p>
         </div>
 
-        <div class="space-y-6">
+        <div class="space-y-4">
             
-            <!-- Chapter 1 -->
-            <details class="group bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer">
-                <summary class="p-6 font-bold text-xl text-brand-700 list-none flex justify-between items-center outline-none">
+            <!-- CHAPTER 1 -->
+            <details class="group bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
+                <summary class="p-6 font-bold text-xl text-brand-700 list-none flex justify-between items-center outline-none cursor-pointer">
                     Chapter 1: Addiction
                     <span class="text-brand-500 group-open:rotate-180 transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                 </summary>
-                <div class="p-6 border-t border-gray-100 text-left cursor-auto bg-gray-50/50">
+                <div class="p-4 border-t border-gray-100 bg-gray-50/50 space-y-3">
                     
                     <!-- Q1 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q1. Explain Addiction (Nasha), give its types and causes.</h4>
-                        <p class="text-brand-600 font-semibold mt-3 mb-1">Introduction:</p>
-                        <p class="text-gray-600">Addiction, commonly known as Nasha, is a condition in which a person becomes physically or psychologically dependent on a substance or activity. The person may continue it even when it causes harm to their health, family, education, career, or social life.</p>
-                        
-                        <p class="text-brand-600 font-semibold mt-3 mb-1">Types of Addiction:</p>
-                        <ol class="list-decimal ml-5 text-gray-600 space-y-1">
-                            <li><strong>Alcohol Addiction:</strong> Excessive and regular consumption of alcohol.</li>
-                            <li><strong>Tobacco Addiction:</strong> Dependence on cigarettes, chewing tobacco, gutkha.</li>
-                            <li><strong>Drug Addiction:</strong> Dependence on harmful substances like opioids or cocaine.</li>
-                            <li><strong>Prescription Drug Addiction:</strong> Misuse of medicines like sleeping pills.</li>
-                            <li><strong>Digital/Internet Addiction:</strong> Excessive use of mobile phones and gaming.</li>
-                            <li><strong>Gambling Addiction:</strong> Uncontrollable desire to gamble despite losses.</li>
-                        </ol>
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q1. Explain Addiction (Nasha), give its types and causes.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Addiction, commonly known as Nasha, is a condition in which a person becomes physically or psychologically dependent on a substance or activity. The person may continue it even when it causes harm to their health, family, education, career, or social life.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Types of Addiction</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Alcohol Addiction</strong> - Excessive and regular consumption of alcohol that leads to physical and psychological dependence.</li>
+                                <li><strong>Tobacco Addiction</strong> - Dependence on cigarettes, bidis, chewing tobacco, gutkha, etc.</li>
+                                <li><strong>Drug Addiction</strong> - Dependence on harmful substances such as opioids, cocaine, heroin and other drugs.</li>
+                                <li><strong>Prescription Drug Addiction</strong> - Misuse or excessive use of medicines such as sleeping pills or painkillers.</li>
+                                <li><strong>Digital/Internet Addiction</strong> - Excessive use of mobile phones, social media, gaming and the internet.</li>
+                                <li><strong>Gambling Addiction</strong> - Uncontrollable desire to gamble despite financial and personal losses.</li>
+                            </ol>
 
-                        <p class="text-brand-600 font-semibold mt-3 mb-1">Causes of Addiction:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>Peer pressure:</strong> Friends encouraging substance use.</li>
-                            <li><strong>Stress and anxiety:</strong> Using substances to escape emotional problems.</li>
-                            <li><strong>Curiosity:</strong> Young people experimenting.</li>
-                            <li><strong>Family problems:</strong> Conflicts or lack of emotional support.</li>
-                            <li><strong>Easy availability:</strong> Easy access to harmful substances.</li>
-                        </ul>
+                            <p class="font-bold text-brand-700 mb-1">Causes of Addiction</p>
+                            <ul class="list-disc ml-5 mb-4 space-y-1">
+                                <li><strong>Peer pressure:</strong> Friends or social groups may encourage a person to try addictive substances.</li>
+                                <li><strong>Stress and anxiety:</strong> Some people use substances to escape from emotional problems.</li>
+                                <li><strong>Curiosity:</strong> Young people may experiment due to curiosity.</li>
+                                <li><strong>Family problems:</strong> Conflicts, neglect or lack of emotional support can contribute to addiction.</li>
+                                <li><strong>Easy availability:</strong> Easy access to alcohol, tobacco or drugs increases the risk.</li>
+                                <li><strong>Poor mental well-being:</strong> Depression, loneliness and low self-esteem may encourage substance use.</li>
+                                <li><strong>Social environment:</strong> Living in an environment where substance use is common can influence behaviour.</li>
+                                <li><strong>Genetic factors:</strong> Family history can increase the risk of developing addiction.</li>
+                            </ul>
 
-                        <p class="text-brand-600 font-semibold mt-3 mb-1">Conclusion:</p>
-                        <p class="text-gray-600">Addiction affects the individual, family, and society. Awareness, family support, and timely treatment can help overcome it.</p>
-                    </div>
-
-                    <hr class="border-gray-200 my-4">
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Addiction is a serious problem that affects not only the individual but also their family and society. Awareness, family support, counselling and timely treatment can help a person overcome addiction.</p>
+                        </div>
+                    </details>
 
                     <!-- Q2 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q2. Symptoms of an addiction in an individual.</h4>
-                        <p class="text-gray-600">Addiction affects physical health, mental health, behaviour, and social relationships.</p>
-                        <p class="text-brand-600 font-semibold mt-3 mb-1">Symptoms:</p>
-                        <ol class="list-decimal ml-5 text-gray-600 space-y-1">
-                            <li><strong>Strong craving:</strong> Intense desire to use the substance.</li>
-                            <li><strong>Loss of control:</strong> Difficulty in reducing or stopping the behaviour.</li>
-                            <li><strong>Increased tolerance:</strong> Needing more amounts for the same effect.</li>
-                            <li><strong>Withdrawal symptoms:</strong> Anxiety, shaking, or sweating when stopped.</li>
-                            <li><strong>Changes in behaviour:</strong> Becoming secretive, aggressive, or withdrawn.</li>
-                            <li><strong>Neglect of responsibilities:</strong> Ignoring studies, work, or duties.</li>
-                            <li><strong>Physical & Financial problems:</strong> Poor sleep, loss of appetite, and wasting money.</li>
-                        </ol>
-                    </div>
-
-                    <hr class="border-gray-200 my-4">
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q2. Symptoms of an addiction in an individual.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Addiction affects a person's physical health, mental health, behaviour and social relationships. The symptoms may differ depending on the type and severity of addiction.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Symptoms of Addiction</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Strong craving</strong> - The individual has an intense desire to use a substance or perform an addictive activity.</li>
+                                <li><strong>Loss of control</strong> - The person finds it difficult to reduce or stop the behaviour.</li>
+                                <li><strong>Increased tolerance</strong> - The individual may need increasing amounts of a substance to experience the same effect.</li>
+                                <li><strong>Withdrawal symptoms</strong> - Anxiety, irritability, sweating, shaking, restlessness or other symptoms may occur when the person stops using the substance.</li>
+                                <li><strong>Changes in behaviour</strong> - The person may become secretive, aggressive, irritated or socially withdrawn.</li>
+                                <li><strong>Neglect of responsibilities</strong> - Studies, work, household duties and other responsibilities may be ignored.</li>
+                                <li><strong>Physical health problems</strong> - Addiction can cause weakness, poor sleep, loss of appetite and other health problems.</li>
+                                <li><strong>Financial problems</strong> - Money may be spent excessively on the addictive substance or activity.</li>
+                                <li><strong>Relationship problems</strong> - Addiction can lead to conflicts with parents, friends, teachers, colleagues and partners.</li>
+                                <li><strong>Poor concentration</strong> - The person may experience difficulty focusing on studies, work or daily activities.</li>
+                            </ol>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Recognising these symptoms at an early stage is important. Family members, teachers and friends should provide support and encourage the individual to seek professional help.</p>
+                        </div>
+                    </details>
 
                     <!-- Q3 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q3. Short note on the impact of addiction on an individual.</h4>
-                        <p class="text-gray-600">Addiction seriously affects an individual's entire life:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1 mt-2">
-                            <li><strong>Physical health:</strong> Weakness, poor nutrition, and damage to important organs.</li>
-                            <li><strong>Mental health:</strong> Increases stress, anxiety, depression, and irritability.</li>
-                            <li><strong>Education & Career:</strong> Loss of concentration, poor performance, and job loss.</li>
-                            <li><strong>Relationships & Finances:</strong> Family conflicts, mistrust, and heavy debts.</li>
-                            <li><strong>Social isolation:</strong> Avoiding family and friends, leading to loneliness.</li>
-                        </ul>
-                    </div>
-
-                    <hr class="border-gray-200 my-4">
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q3. Short note on the impact of addiction on an individual.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Addiction can have a serious impact on almost every aspect of an individual's life. It affects physical health, mental well-being, education, career, relationships and financial stability.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Impact of Addiction</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Physical health:</strong> Addiction may cause weakness, poor nutrition, sleep problems and serious health complications. Long-term substance use can damage important organs.</li>
+                                <li><strong>Mental health:</strong> It can increase stress, anxiety, depression, irritability and emotional instability.</li>
+                                <li><strong>Education:</strong> Students may lose concentration, miss classes, perform poorly in examinations and eventually drop out.</li>
+                                <li><strong>Career:</strong> Addiction may reduce productivity, increase absenteeism and lead to loss of employment or career opportunities.</li>
+                                <li><strong>Family relationships:</strong> It can create conflicts, mistrust and emotional stress among family members.</li>
+                                <li><strong>Financial problems:</strong> A person may spend a large amount of money on addictive substances or activities, leading to debt and financial difficulties.</li>
+                                <li><strong>Social isolation:</strong> The individual may avoid family and friends and gradually become socially isolated.</li>
+                                <li><strong>Risky behaviour:</strong> Addiction can affect judgement and increase the possibility of accidents and other harmful decisions.</li>
+                            </ol>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Addiction can negatively affect the individual's entire life. Early awareness, counselling, family support and rehabilitation are important for recovery.</p>
+                        </div>
+                    </details>
 
                     <!-- Q4 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q4. Prevention strategies to overcome addiction.</h4>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>Awareness & Education:</strong> Teaching society about the harmful effects of addictions.</li>
-                            <li><strong>Strong family support:</strong> Open communication and emotional backing.</li>
-                            <li><strong>Avoid peer pressure:</strong> Learning to confidently say "No" to bad habits.</li>
-                            <li><strong>Healthy lifestyle:</strong> Regular exercise, good sleep, and healthy food.</li>
-                            <li><strong>Counselling & Rehab:</strong> Seeking professional help and rehabilitation programmes.</li>
-                            <li><strong>Develop positive thinking:</strong> Staying optimistic and setting life goals.</li>
-                        </ul>
-                    </div>
-
-                    <hr class="border-gray-200 my-4">
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q4. Preventive strategies to overcome addiction.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Addiction can be prevented and managed through awareness, healthy habits, family support, counselling and professional treatment. Prevention is especially important among young people.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Preventive Strategies</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Awareness and education</strong> - Educate students and society about the harmful effects of alcohol, tobacco, drugs and other addictions.</li>
+                                <li><strong>Strong family support</strong> - Open communication and emotional support from family can prevent individuals from turning to addictive substances.</li>
+                                <li><strong>Avoid peer pressure</strong> - Individuals should learn to confidently say "No" to harmful substances and negative influences.</li>
+                                <li><strong>Healthy lifestyle</strong> - Regular exercise, proper sleep, nutritious food and recreational activities promote physical and mental well-being.</li>
+                                <li><strong>Stress management</strong> - Meditation, yoga, hobbies and time management can help individuals deal with stress.</li>
+                                <li><strong>Counselling</strong> - Professional counselling can help identify the reasons behind addiction and develop healthier coping methods.</li>
+                                <li><strong>Rehabilitation programmes</strong> - Rehabilitation centres provide treatment, counselling and support to help individuals return to normal life.</li>
+                                <li><strong>Avoid triggers</strong> - Individuals should stay away from places, people or situations that encourage addictive behaviour.</li>
+                                <li><strong>Develop positive thinking</strong> - Maintaining a positive attitude and setting personal goals can improve motivation.</li>
+                                <li><strong>Community support</strong> - Schools, colleges, NGOs and communities can conduct awareness programmes and provide support.</li>
+                            </ol>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Overcoming addiction requires self-control, professional guidance, family support and social acceptance. Prevention and early intervention can help individuals lead a healthy and productive life.</p>
+                        </div>
+                    </details>
 
                     <!-- Q5 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q5. Present Nasha-Mukti with the help of a case study.</h4>
-                        <p class="text-gray-600 italic bg-yellow-50 p-3 rounded border-l-4 border-yellow-400">Note: Please refer to your own specific case study assigned for this topic.</p>
-                    </div>
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q5. Present Nasha-Mukti with the help of a case study (Nasha Mukti Kendra).
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="italic">Ans: Refer to your own case study.</p>
+                        </div>
+                    </details>
 
                 </div>
             </details>
 
-            <!-- Chapter 2 -->
-            <details class="group bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer">
-                <summary class="p-6 font-bold text-xl text-brand-700 list-none flex justify-between items-center outline-none">
+            <!-- CHAPTER 2 -->
+            <details class="group bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
+                <summary class="p-6 font-bold text-xl text-brand-700 list-none flex justify-between items-center outline-none cursor-pointer">
                     Chapter 2: Positive Thinking
                     <span class="text-brand-500 group-open:rotate-180 transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                 </summary>
-                <div class="p-6 border-t border-gray-100 text-left cursor-auto bg-gray-50/50">
+                <div class="p-4 border-t border-gray-100 bg-gray-50/50 space-y-3">
                     
                     <!-- Q1 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q1. Distinguish between Positive and Negative Thinking.</h4>
-                        <div class="overflow-x-auto mt-3">
-                            <table class="min-w-full bg-white border border-gray-200 text-sm">
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q1. Distinguish between Positive and Negative Thinking.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed overflow-x-auto">
+                            <table class="min-w-full bg-white border border-gray-300 text-sm mb-4">
                                 <thead>
-                                    <tr class="bg-brand-50 text-brand-700">
-                                        <th class="py-2 px-4 border-b text-left">Positive Thinking</th>
-                                        <th class="py-2 px-4 border-b text-left">Negative Thinking</th>
+                                    <tr class="bg-gray-100">
+                                        <th class="py-2 px-4 border text-left">Positive Thinking</th>
+                                        <th class="py-2 px-4 border text-left">Negative Thinking</th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-gray-600">
-                                    <tr><td class="py-2 px-4 border-b">Focuses on solutions.</td><td class="py-2 px-4 border-b">Focuses mainly on problems.</td></tr>
-                                    <tr><td class="py-2 px-4 border-b">Develops confidence and motivation.</td><td class="py-2 px-4 border-b">Creates self-doubt and fear.</td></tr>
-                                    <tr><td class="py-2 px-4 border-b">Sees failure as a learning opportunity.</td><td class="py-2 px-4 border-b">Sees failure as the end of success.</td></tr>
-                                    <tr><td class="py-2 px-4 border-b">Encourages taking constructive action.</td><td class="py-2 px-4 border-b">Often leads to avoidance.</td></tr>
-                                    <tr><td class="py-2 px-4 border-b">Helps manage stress effectively.</td><td class="py-2 px-4 border-b">Can increase stress and anxiety.</td></tr>
+                                <tbody>
+                                    <tr><td class="py-2 px-4 border">Focuses on solutions.</td><td class="py-2 px-4 border">Focuses mainly on problems.</td></tr>
+                                    <tr><td class="py-2 px-4 border">Develops confidence and motivation.</td><td class="py-2 px-4 border">Creates self-doubt and fear.</td></tr>
+                                    <tr><td class="py-2 px-4 border">Sees failure as a learning opportunity.</td><td class="py-2 px-4 border">Sees failure as the end of success.</td></tr>
+                                    <tr><td class="py-2 px-4 border">Encourages hope and optimism.</td><td class="py-2 px-4 border">Encourages pessimism.</td></tr>
+                                    <tr><td class="py-2 px-4 border">Helps in decision-making.</td><td class="py-2 px-4 border">Can create confusion and hesitation.</td></tr>
+                                    <tr><td class="py-2 px-4 border">Promotes healthy relationships.</td><td class="py-2 px-4 border">May create conflicts and isolation.</td></tr>
+                                    <tr><td class="py-2 px-4 border">Encourages taking constructive action.</td><td class="py-2 px-4 border">Often leads to avoidance.</td></tr>
+                                    <tr><td class="py-2 px-4 border">Helps manage stress effectively.</td><td class="py-2 px-4 border">Can increase stress and anxiety.</td></tr>
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
+                            <p class="font-bold text-brand-700 mb-1">Example</p>
+                            <p class="mb-4">A positive thinker who fails an examination may think, "I need to identify my mistakes and improve."<br>
+                            A negative thinker may think, "I can never succeed."</p>
 
-                    <hr class="border-gray-200 my-4">
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Positive thinking does not mean ignoring problems. It means facing problems with a realistic, hopeful and solution-oriented attitude.</p>
+                        </div>
+                    </details>
 
                     <!-- Q2 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q2. Techniques to develop Positive Thinking.</h4>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>Practice gratitude:</strong> Appreciate the good things in life.</li>
-                            <li><strong>Use positive self-talk:</strong> Replace negative thoughts with encouraging statements.</li>
-                            <li><strong>Set achievable goals:</strong> Small goals create motivation and confidence.</li>
-                            <li><strong>Learn from failures:</strong> Treat mistakes as learning opportunities.</li>
-                            <li><strong>Surround yourself with positive people:</strong> Supportive friends encourage healthy thinking.</li>
-                            <li><strong>Focus on solutions:</strong> Look for answers instead of crying over the problem.</li>
-                        </ul>
-                    </div>
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q2. Techniques to develop Positive Thinking.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Positive thinking is a skill that can be developed through regular practice. It helps individuals improve confidence, emotional well-being and problem-solving abilities.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Techniques</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Practice gratitude</strong> - Regularly think about and appreciate the good things in life.</li>
+                                <li><strong>Use positive self-talk</strong> - Replace negative thoughts with encouraging and realistic statements.</li>
+                                <li><strong>Set achievable goals</strong> - Small and realistic goals create motivation and confidence.</li>
+                                <li><strong>Learn from failures</strong> - Treat mistakes as opportunities to learn and improve.</li>
+                                <li><strong>Surround yourself with positive people</strong> - Supportive people encourage healthy thinking.</li>
+                                <li><strong>Practice meditation and mindfulness</strong> - These help control negative thoughts and improve emotional balance.</li>
+                                <li><strong>Focus on solutions</strong> - Instead of continuously thinking about a problem, look for possible solutions.</li>
+                                <li><strong>Maintain a healthy lifestyle</strong> - Exercise, proper sleep and a balanced diet support mental well-being.</li>
+                                <li><strong>Avoid unnecessary comparison</strong> - Focus on personal growth instead of comparing yourself with others.</li>
+                                <li><strong>Read and learn</strong> - Positive books, inspirational content and constructive activities can encourage optimistic thinking.</li>
+                            </ol>
 
-                    <hr class="border-gray-200 my-4">
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Positive thinking develops gradually through consistent practice, self-awareness and a healthy environment.</p>
+                        </div>
+                    </details>
 
                     <!-- Q3 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q3. Barriers to positive thinking.</h4>
-                        <p class="text-gray-600 mb-2">The major barriers that stop a person from thinking positively are:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>Fear of failure:</strong> Fear of making mistakes stops people from taking chances.</li>
-                            <li><strong>Low self-confidence:</strong> Underestimating one's own abilities.</li>
-                            <li><strong>Negative self-talk:</strong> Repeatedly thinking "I am not good enough."</li>
-                            <li><strong>Stress and anxiety:</strong> Stress makes it hard to focus on solutions.</li>
-                            <li><strong>Overthinking & Negative surroundings:</strong> Constantly worrying and staying with people who only criticize.</li>
-                            <li><strong>Comparison with others:</strong> Comparing life with others creates dissatisfaction.</li>
-                        </ul>
-                    </div>
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q3. Barriers to positive thinking.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Positive thinking means approaching situations with hope, confidence and a solution-oriented attitude. However, certain personal, emotional and social factors can prevent a person from thinking positively. These are known as barriers to positive thinking.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Major Barriers</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Fear of failure</strong>: Fear of making mistakes or failing can stop a person from taking new opportunities. It may create thoughts such as "I cannot do it" or "I will fail."</li>
+                                <li><strong>Low self-confidence</strong>: A person who does not believe in their abilities may always underestimate themselves. This makes it difficult to develop a positive attitude.</li>
+                                <li><strong>Negative self-talk</strong>: Repeatedly thinking negatively about oneself can reduce motivation. Thoughts like "I am not good enough" can become a habit.</li>
+                                <li><strong>Past failures and bad experiences</strong>: Previous failures may make a person believe that the same thing will happen again. Instead of learning from the experience, they may lose hope.</li>
+                                <li><strong>Stress and anxiety</strong>: High levels of stress can make it difficult to think clearly. A stressed person may focus more on problems than on possible solutions.</li>
+                                <li><strong>Overthinking</strong>: Constantly thinking about negative situations can increase fear and confusion. Overthinking may prevent a person from taking action.</li>
+                                <li><strong>Negative surroundings</strong>: Being surrounded by people who constantly criticise, discourage or complain can influence a person's thinking and attitude.</li>
+                                <li><strong>Comparison with others</strong>: Comparing one's appearance, achievements, lifestyle or success with others can create feelings of inferiority and dissatisfaction.</li>
+                                <li><strong>Fear of criticism</strong>: Some people avoid taking decisions because they are worried about what others might say. This can reduce confidence and self-expression.</li>
+                                <li><strong>Lack of motivation and clear goals</strong>: When a person does not have clear goals, they may lose direction and motivation. This can lead to negative thoughts about the future.</li>
+                            </ol>
+
+                            <p class="font-bold text-brand-700 mb-1">How to Overcome These Barriers</p>
+                            <p class="mb-4">These barriers can be reduced by practising self-confidence, positive self-talk, meditation, gratitude, goal-setting, healthy habits and spending time with supportive people. Failures should be treated as learning experiences rather than permanent defeats.</p>
+
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Positive thinking is important for personal growth and success. By identifying and overcoming these barriers, a person can develop a confident, optimistic and solution-oriented mindset.</p>
+                        </div>
+                    </details>
 
                 </div>
             </details>
 
-            <!-- Chapter 3 -->
-            <details class="group bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer">
-                <summary class="p-6 font-bold text-xl text-brand-700 list-none flex justify-between items-center outline-none">
+            <!-- CHAPTER 3 -->
+            <details class="group bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
+                <summary class="p-6 font-bold text-xl text-brand-700 list-none flex justify-between items-center outline-none cursor-pointer">
                     Chapter 3: Women Entrepreneurship
                     <span class="text-brand-500 group-open:rotate-180 transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                 </summary>
-                <div class="p-6 border-t border-gray-100 text-left cursor-auto bg-gray-50/50">
+                <div class="p-4 border-t border-gray-100 bg-gray-50/50 space-y-3">
                     
                     <!-- Q1 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q1. Importance of women entrepreneurship and leadership.</h4>
-                        <p class="text-gray-600 mb-2">Women entrepreneurship refers to businesses owned or managed by women. Its importance includes:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>Economic & Rural development:</strong> Contributes to national income and supports rural growth.</li>
-                            <li><strong>Employment generation:</strong> Creates new job opportunities for society.</li>
-                            <li><strong>Financial independence:</strong> Helps women become self-reliant and confident.</li>
-                            <li><strong>Poverty reduction:</strong> Increased family income improves the standard of living.</li>
-                            <li><strong>Role models:</strong> Inspires younger generations of girls to start businesses.</li>
-                        </ul>
-                    </div>
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q1. Importance of women entrepreneurship and leadership.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Women entrepreneurship refers to businesses started, owned or managed by women. Women entrepreneurs contribute significantly to economic development, employment generation and social progress.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Importance of Women Entrepreneurship</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Economic development</strong> - Women-owned businesses contribute to production, income and economic growth.</li>
+                                <li><strong>Employment generation</strong> - Women entrepreneurs create job opportunities for others.</li>
+                                <li><strong>Financial independence</strong> - Entrepreneurship helps women become financially independent.</li>
+                                <li><strong>Innovation</strong> - Women introduce new products, services and business ideas.</li>
+                                <li><strong>Rural development</strong> - Women-led businesses can support employment and development in rural areas.</li>
+                                <li><strong>Poverty reduction</strong> - Increased income improves the standard of living of families.</li>
+                                <li><strong>Social empowerment</strong> - Entrepreneurship increases women's confidence and decision-making power.</li>
+                                <li><strong>Role models</strong> - Successful women entrepreneurs inspire younger generations.</li>
+                                <li><strong>Better use of talent</strong> - It allows women to use their skills and creativity productively.</li>
+                                <li><strong>Inclusive growth</strong> - Greater participation of women creates a more inclusive economy.</li>
+                            </ol>
 
-                    <hr class="border-gray-200 my-4">
+                            <p class="font-bold text-brand-700 mb-1">Importance of Women Leadership</p>
+                            <p class="mb-4">Women leaders bring different perspectives, communication styles and approaches to decision-making. They can contribute to better organisational performance and encourage other women to take leadership roles.</p>
+
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Women entrepreneurship and leadership are essential for economic growth, employment, empowerment and social development.</p>
+                        </div>
+                    </details>
 
                     <!-- Q2 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q2. Explain various sectors where women excel as entrepreneurs with a suitable industrial example.</h4>
-                        <p class="text-gray-600 mb-2">Women are highly active in sectors such as:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1 mb-3">
-                            <li>Fashion, textiles, and jewellery.</li>
-                            <li>Food and beverages (restaurants, catering).</li>
-                            <li>Beauty, skincare, and wellness services.</li>
-                            <li>Technology, IT, and E-commerce.</li>
-                            <li>Education and skill-development coaching.</li>
-                        </ul>
-                        <p class="text-gray-600 italic bg-yellow-50 p-3 rounded border-l-4 border-yellow-400">Note: Please refer to your own case study of women entrepreneurs for the industrial example.</p>
-                    </div>
-
-                    <hr class="border-gray-200 my-4">
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q2. Various sectors where women excel as entrepreneurs (with case study).
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Women entrepreneurs are active in almost every sector of the economy. With increasing access to education, technology and finance, women are entering both traditional and modern industries.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Major Sectors</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Fashion and textiles</strong> - Clothing, handicrafts, jewellery and fashion brands.</li>
+                                <li><strong>Food and beverages</strong> - Restaurants, catering, food processing and packaged food.</li>
+                                <li><strong>Beauty and wellness</strong> - Beauty salons, skincare, cosmetics and wellness services.</li>
+                                <li><strong>Education</strong> - Coaching centres, educational platforms and skill-development businesses.</li>
+                                <li><strong>Technology and IT</strong> - Software, digital platforms, fintech and technology startups.</li>
+                                <li><strong>Healthcare</strong> - Healthcare services, medical technology and wellness businesses.</li>
+                                <li><strong>Agriculture</strong> - Food processing, organic farming, dairy and agricultural products.</li>
+                                <li><strong>E-commerce</strong> - Online stores, home-based businesses and digital marketplaces.</li>
+                                <li><strong>Tourism and hospitality</strong> - Hotels, travel services and tourism-related businesses.</li>
+                                <li><strong>Social entrepreneurship</strong> - Businesses that address social and environmental problems.</li>
+                            </ol>
+                            <p class="italic">And your own case study of women entrepreneurs.</p>
+                        </div>
+                    </details>
 
                     <!-- Q3 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q3. Challenges and need for women entrepreneurs.</h4>
-                        <p class="text-brand-600 font-semibold mt-3 mb-1">Major Challenges:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>Lack of finance:</strong> Difficulty in getting business loans.</li>
-                            <li><strong>Family responsibilities:</strong> Balancing household duties with business.</li>
-                            <li><strong>Social barriers & Safety:</strong> Traditional mindsets and mobility concerns.</li>
-                            <li><strong>Lack of network & training:</strong> Limited access to mentors, technology, and business education.</li>
-                        </ul>
-                        <p class="text-brand-600 font-semibold mt-3 mb-1">Needs/Solutions:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li>Easier access to credit and loans.</li>
-                            <li>Mentorship, training, and digital literacy programmes.</li>
-                            <li>Awareness of helpful government schemes.</li>
-                            <li>Family and community support.</li>
-                        </ul>
-                    </div>
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q3. Challenges and need for women entrepreneurs in India.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Women entrepreneurs are important contributors to India's economic and social development. However, many women continue to face financial, social, educational and institutional barriers while starting and expanding businesses.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Challenges Faced by Women Entrepreneurs in India</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Lack of access to finance:</strong> Women may face difficulties in obtaining loans and investment because of limited access to collateral, financial networks and business credit.</li>
+                                <li><strong>Social and cultural barriers:</strong> Traditional attitudes may discourage women from taking business risks or becoming independent entrepreneurs.</li>
+                                <li><strong>Family responsibilities:</strong> Women often have to balance entrepreneurship with household responsibilities, childcare and family expectations.</li>
+                                <li><strong>Lack of business networks:</strong> Limited access to mentors, investors, industry contacts and professional networks can restrict business opportunities.</li>
+                                <li><strong>Lack of training:</strong> Some women may not have sufficient knowledge of accounting, marketing, technology, taxation and business management.</li>
+                                <li><strong>Limited access to technology:</strong> Women in some rural and semi-urban areas may have limited access to digital tools, internet services and technological training.</li>
+                                <li><strong>Market competition:</strong> Small women-owned businesses may find it difficult to compete with larger established companies.</li>
+                                <li><strong>Lack of confidence:</strong> Social restrictions and limited opportunities may affect confidence and willingness to take entrepreneurial risks.</li>
+                                <li><strong>Mobility and safety concerns:</strong> Travel for business meetings, markets, suppliers and networking can sometimes be difficult due to safety and mobility concerns.</li>
+                                <li><strong>Limited awareness of government schemes:</strong> Some women may not know about government programmes, financial support, training and entrepreneurship schemes available to them.</li>
+                            </ol>
+
+                            <p class="font-bold text-brand-700 mb-1">Need for Women Entrepreneurs in India</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Economic growth:</strong> Greater participation of women in business increases economic activity and contributes to national development.</li>
+                                <li><strong>Employment generation:</strong> Women entrepreneurs create employment opportunities for both women and men.</li>
+                                <li><strong>Women empowerment:</strong> Entrepreneurship gives women greater financial independence and decision-making power.</li>
+                                <li><strong>Poverty reduction:</strong> Income generated through women-led businesses can improve family living standards.</li>
+                                <li><strong>Rural development:</strong> Women entrepreneurs can create small businesses in rural areas, generating local employment and income.</li>
+                                <li><strong>Innovation:</strong> Women bring new ideas and perspectives to products, services and business models.</li>
+                                <li><strong>Better use of human resources:</strong> Encouraging women entrepreneurs allows India to make better use of its educated and skilled population.</li>
+                                <li><strong>Role models for young women:</strong> Successful women entrepreneurs motivate other women to pursue education, careers and entrepreneurship.</li>
+                                <li><strong>Social development:</strong> Financially independent women can contribute more to education, healthcare and the overall well-being of their families.</li>
+                                <li><strong>Inclusive economic development:</strong> Women's participation ensures that economic growth benefits a larger section of society.</li>
+                            </ol>
+
+                            <p class="font-bold text-brand-700 mb-1">Measures to Promote Women Entrepreneurship</p>
+                            <ul class="list-disc ml-5 mb-4 space-y-1">
+                                <li>Provide easier access to loans and credit.</li>
+                                <li>Conduct entrepreneurship and skill-development programmes.</li>
+                                <li>Improve digital and financial literacy.</li>
+                                <li>Provide mentorship and networking opportunities.</li>
+                                <li>Encourage women-focused incubators and startup programmes.</li>
+                                <li>Create awareness about government schemes.</li>
+                                <li>Improve safety and mobility.</li>
+                                <li>Encourage families and communities to support women entrepreneurs.</li>
+                                <li>Provide better market access through e-commerce and digital platforms.</li>
+                                <li>Promote women's participation in leadership and decision-making.</li>
+                            </ul>
+
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Women entrepreneurship is essential for India's economic growth, employment generation and social empowerment. Although women face several challenges, proper access to finance, education, technology, mentorship and supportive policies can help them become successful entrepreneurs. Encouraging women to start and lead businesses will contribute to a more inclusive, innovative and developed India.</p>
+                        </div>
+                    </details>
 
                 </div>
             </details>
 
-            <!-- Chapter 4 -->
-            <details class="group bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer">
-                <summary class="p-6 font-bold text-xl text-brand-700 list-none flex justify-between items-center outline-none">
+            <!-- CHAPTER 4 (5 Marks Simple English Format) -->
+            <details class="group bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
+                <summary class="p-6 font-bold text-xl text-brand-700 list-none flex justify-between items-center outline-none cursor-pointer">
                     Chapter 4: Journalism and Media
                     <span class="text-brand-500 group-open:rotate-180 transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                 </summary>
-                <div class="p-6 border-t border-gray-100 text-left cursor-auto bg-gray-50/50">
+                <div class="p-4 border-t border-gray-100 bg-gray-50/50 space-y-3">
                     
                     <!-- Q1 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q1. Role of Journalist and Media.</h4>
-                        <p class="text-gray-600 mb-2">The media is the fourth pillar of democracy. Its key roles include:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>Providing Information:</strong> Delivering accurate, unbiased, and timely news.</li>
-                            <li><strong>Public Awareness:</strong> Educating citizens about rights, health, and social issues.</li>
-                            <li><strong>Exposing Truth:</strong> Investigating and uncovering corruption and crimes.</li>
-                            <li><strong>Voice of the Public:</strong> Highlighting ordinary people's struggles to grab the government's attention.</li>
-                            <li><strong>Watchdog:</strong> Keeping a strict watch on the government and powerful organizations.</li>
-                        </ul>
-                    </div>
-
-                    <hr class="border-gray-200 my-4">
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q1. Role of Journalist and Media.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">The media is known as the fourth pillar of democracy. Journalists play a very important role in connecting the public with the world and keeping everyone informed.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Key Roles of Media</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Providing Information:</strong> Giving true, fast, and unbiased news to the public every day.</li>
+                                <li><strong>Public Awareness:</strong> Educating citizens about their rights, health, and new government schemes.</li>
+                                <li><strong>Exposing Truth:</strong> Investigating deeply to expose corruption, crimes, and illegal activities.</li>
+                                <li><strong>Voice of the Public:</strong> Showing the daily problems of common people so the government can solve them.</li>
+                                <li><strong>Watchdog:</strong> Keeping a strict watch on politicians and big companies to ensure they do not break the rules.</li>
+                            </ol>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Journalists act as a bridge between the government and the citizens. They help in building a safe, aware, and transparent society.</p>
+                        </div>
+                    </details>
 
                     <!-- Q2 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q2. Educational Based Career in Journalism and Mass Media.</h4>
-                        <p class="text-gray-600 mb-2">A career in journalism requires specific educational training:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>BMM (Bachelor of Mass Media):</strong> Covers media, advertising, and journalism.</li>
-                            <li><strong>BA in Journalism and Mass Communication:</strong> Focused heavily on reporting and media ethics.</li>
-                            <li><strong>Diplomas & Master's Degrees:</strong> Short courses for specific skills or advanced degrees for investigative journalism.</li>
-                        </ul>
-                        <p class="text-gray-600 mt-2"><strong>Careers:</strong> News Reporter, Anchor, Content Writer, Editor, or PR Officer.</p>
-                    </div>
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q2. Educational Based Career in Journalism and Mass Media.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">To become a successful journalist, a person needs proper education and training. This helps them understand how to collect and report news responsibly.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Educational Courses & Careers</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>BMM (Bachelor of Mass Media):</strong> A basic 3-year degree that teaches about media, advertising, and journalism.</li>
+                                <li><strong>BA in Journalism:</strong> A special degree focused entirely on reporting, writing news, and media rules.</li>
+                                <li><strong>Diploma Courses:</strong> Short 6-month or 1-year courses for specific skills like camera handling or digital media.</li>
+                                <li><strong>Master’s Degree:</strong> Higher studies for expert roles like investigative reporting or media research.</li>
+                                <li><strong>Career Options:</strong> After studying, one can easily become a News Reporter, TV Anchor, Editor, or PR (Public Relations) Officer.</li>
+                            </ol>
 
-                    <hr class="border-gray-200 my-4">
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Having a good educational background helps a person build a highly respected and successful career in the fast-growing media industry.</p>
+                        </div>
+                    </details>
 
                     <!-- Q3 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q3. Skills Required for Career in Journalism and Media.</h4>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>Strong Communication:</strong> Speaking and writing clearly and confidently.</li>
-                            <li><strong>Research Skills:</strong> Finding and verifying the exact truth before reporting.</li>
-                            <li><strong>Unbiased Attitude:</strong> Reporting neutrally without adding personal emotions.</li>
-                            <li><strong>Time Management:</strong> Working quickly to meet strict news deadlines.</li>
-                            <li><strong>Confidence & Tech-Savvy:</strong> Bravery to ask tough questions and basic knowledge of digital tools.</li>
-                        </ul>
-                    </div>
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q3. Skills Required for Career in Journalism and Media.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">The media industry works very fast. To survive and grow here, a journalist needs a strong mix of active thinking and communication skills.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Key Skills Required</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Strong Communication:</strong> The ability to speak and write clearly, confidently, and without grammar mistakes.</li>
+                                <li><strong>Research Skills:</strong> The patience to find the exact truth and check all facts before reporting.</li>
+                                <li><strong>Unbiased Attitude:</strong> Telling the news honestly without mixing personal feelings or taking any sides.</li>
+                                <li><strong>Confidence and Courage:</strong> The bravery to ask tough questions to powerful people without fear.</li>
+                                <li><strong>Tech-Savvy:</strong> Knowing how to use modern cameras, social media, and internet tools for fast reporting.</li>
+                            </ol>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Honesty, curiosity to learn new things, and good communication are the best skills that make a journalist trustworthy and famous.</p>
+                        </div>
+                    </details>
 
                 </div>
             </details>
 
-            <!-- Chapter 5 -->
-            <details class="group bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer">
-                <summary class="p-6 font-bold text-xl text-brand-700 list-none flex justify-between items-center outline-none">
+            <!-- CHAPTER 5 (5 Marks Simple English Format) -->
+            <details class="group bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
+                <summary class="p-6 font-bold text-xl text-brand-700 list-none flex justify-between items-center outline-none cursor-pointer">
                     Chapter 5: Sustainable Resource Management
                     <span class="text-brand-500 group-open:rotate-180 transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                 </summary>
-                <div class="p-6 border-t border-gray-100 text-left cursor-auto bg-gray-50/50">
+                <div class="p-4 border-t border-gray-100 bg-gray-50/50 space-y-3">
                     
                     <!-- Q1 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q1. Types of Sustainable Natural Resources.</h4>
-                        <p class="text-gray-600 mb-2">These are nature's gifts used to meet current needs without destroying them for future generations:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>Renewable Resources:</strong> Never run out and replenish naturally (e.g., solar and wind energy).</li>
-                            <li><strong>Non-Renewable Resources:</strong> Take millions of years to form and must be used efficiently (e.g., coal, petroleum).</li>
-                            <li><strong>Biological Resources:</strong> Forests, plants, and wildlife saved through conservation.</li>
-                            <li><strong>Water Resources:</strong> Rivers and oceans sustained through rainwater harvesting and preventing pollution.</li>
-                        </ul>
-                    </div>
-
-                    <hr class="border-gray-200 my-4">
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q1. Types of Sustainable Natural Resources.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Sustainable natural resources are nature's gifts that we can use carefully to meet our daily needs, so they do not finish completely for future generations.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Types of Resources</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Renewable Resources:</strong> Things that never run out and remake themselves naturally, like sunlight (solar energy) and wind.</li>
+                                <li><strong>Non-Renewable Resources:</strong> Things that take millions of years to form, like coal and petrol. We must use them very carefully.</li>
+                                <li><strong>Biological Resources:</strong> Living things like forests, plants, and animals. We sustain them by stopping deforestation.</li>
+                                <li><strong>Water Resources:</strong> Rivers, lakes, and oceans. We sustain them by saving rainwater and stopping water pollution.</li>
+                                <li><strong>Land Resources:</strong> The soil we use for farming and living. We protect it by avoiding harmful chemicals.</li>
+                            </ol>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Identifying and protecting all these types of natural resources is very important to keep our Earth balanced and safe.</p>
+                        </div>
+                    </details>
 
                     <!-- Q2 -->
-                    <div class="mb-6">
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q2. Methods of Sustainable Practices.</h4>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-1">
-                            <li><strong>The 3Rs:</strong> Reduce, Reuse, and Recycle waste.</li>
-                            <li><strong>Renewable Energy:</strong> Switching to solar panels and wind turbines instead of coal.</li>
-                            <li><strong>Water Conservation:</strong> Fixing leaks, using drip irrigation, and harvesting rainwater.</li>
-                            <li><strong>Sustainable Agriculture:</strong> Farming with organic manure instead of harmful chemicals.</li>
-                            <li><strong>Afforestation:</strong> Planting trees to maintain oxygen balance and stop soil erosion.</li>
-                        </ul>
-                    </div>
-
-                    <hr class="border-gray-200 my-4">
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q2. Methods of Sustainable Practices.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">Sustainable practices are our simple daily habits and methods that help to protect the environment and stop the wastage of resources.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Key Methods</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>The 3Rs System:</strong> Reduce (create less waste), Reuse (use old items again), and Recycle (make new things from old plastic/paper).</li>
+                                <li><strong>Using Renewable Energy:</strong> Using solar panels and wind energy for electricity instead of burning harmful coal.</li>
+                                <li><strong>Water Conservation:</strong> Fixing leaking pipes immediately and using rainwater harvesting tanks in buildings.</li>
+                                <li><strong>Sustainable Agriculture:</strong> Doing organic farming using natural cow-dung manure instead of poisonous chemical fertilizers.</li>
+                                <li><strong>Afforestation:</strong> Planting more trees everywhere to keep the air clean and stop soil from washing away.</li>
+                            </ol>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>If every human and factory adopts these simple good habits, we can easily heal our planet and secure our future.</p>
+                        </div>
+                    </details>
 
                     <!-- Q3 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-gray-900 mb-2">Q3. Five Features and Importance of Sustainable Resource Management.</h4>
-                        <p class="text-brand-600 font-semibold mt-3 mb-1">Five Features:</p>
-                        <ol class="list-decimal ml-5 text-gray-600 space-y-1">
-                            <li>Long-term planning for future needs.</li>
-                            <li>Minimal waste and pollution production.</li>
-                            <li>Using eco-friendly and green technology.</li>
-                            <li>Protecting animal habitats and ecosystems.</li>
-                            <li>Balancing human lifestyle needs with environmental health.</li>
-                        </ol>
-                        <p class="text-brand-600 font-semibold mt-3 mb-1">Importance:</p>
-                        <p class="text-gray-600">It saves crucial resources (water, clean air) for the future, controls global warming by reducing emissions, prevents plant and animal extinction, and ensures steady economic growth.</p>
-                    </div>
+                    <details class="group/q bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <summary class="p-4 font-semibold text-lg text-gray-800 flex justify-between items-center cursor-pointer list-none outline-none hover:text-brand-600 transition-colors">
+                            Q3. Five Features and Importance of Sustainable Resource Management.
+                            <i class="fas fa-plus text-gray-400 group-open/q:hidden"></i>
+                            <i class="fas fa-minus text-brand-500 hidden group-open/q:block"></i>
+                        </summary>
+                        <div class="p-4 border-t border-gray-100 bg-blue-50/30 text-gray-700 leading-relaxed">
+                            <p class="font-bold text-brand-700 mb-1">Introduction</p>
+                            <p class="mb-4">It means planning and using our natural resources smartly so that we can progress today without harming the environment for tomorrow.</p>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Five Features</p>
+                            <ol class="list-decimal ml-5 mb-4 space-y-1">
+                                <li><strong>Long-Term Planning:</strong> Thinking about the future, not just today's profit.</li>
+                                <li><strong>Minimal Waste:</strong> Creating factory processes that produce zero or very little pollution.</li>
+                                <li><strong>Eco-Friendly Technology:</strong> Using modern green machines that consume less electricity.</li>
+                                <li><strong>Ecosystem Protection:</strong> Doing business without cutting forests or destroying animal homes.</li>
+                                <li><strong>Perfect Balance:</strong> Maintaining an equal balance between human lifestyle needs and nature.</li>
+                            </ol>
+
+                            <p class="font-bold text-brand-700 mb-1">Importance</p>
+                            <ul class="list-disc ml-5 mb-4 space-y-1">
+                                <li><strong>Saves Resources:</strong> Ensures that our future kids have enough water, fuel, and oxygen.</li>
+                                <li><strong>Controls Global Warming:</strong> Stops the dangerous rising temperature of the Earth.</li>
+                                <li><strong>Prevents Extinction:</strong> Protects birds and animals from dying out completely.</li>
+                            </ul>
+                            
+                            <p class="font-bold text-brand-700 mb-1">Conclusion</p>
+                            <p>Managing our resources sustainably is no longer just an option; it is a strict necessity to save the Earth from destruction.</p>
+                        </div>
+                    </details>
 
                 </div>
             </details>
