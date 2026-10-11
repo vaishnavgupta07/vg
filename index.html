@@ -451,6 +451,16 @@
                 alert("Hey! That's my name. Please enter YOUR name! 😄");
                 return;
             }
+            // 5. Gibberish (Random Typing) Filter
+            const hasVowel = /[aeiouyAEIOUY]/.test(nameInput); // नाम में Vowel होना ज़रूरी है
+            const threeConsecutive = /(.)\1{2,}/.test(nameInput); // 3 अक्षर लगातार (aaa) नहीं होने चाहिए
+            const fourConsonants = /[^aeiouyAEIOUY\s]{4,}/.test(nameInput); // 4 consonants (asdf) नहीं होने चाहिए
+            const startWithDoubleConsonant = /^([^aeiouyAEIOUY\s])\1/i.test(nameInput); // नाम jji, kkl से शुरू नहीं होना चाहिए
+
+            if (!hasVowel || threeConsecutive || fourConsonants || startWithDoubleConsonant) {
+                alert("Please enter a proper real name! (Random typing is not allowed 🤨)");
+                return;
+            }
 
             // अगर सब कुछ सही है, तो आगे बढ़ें
             const name = nameInput;
