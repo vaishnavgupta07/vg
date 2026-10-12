@@ -456,12 +456,11 @@
                 return;
             }
 
-            // 4. Aapki apni pehchan ko bachana
-            if (lowerName.includes("vaishnav") || lowerName.includes("vsg") || lowerName.includes("gupta")) {
-                alert("Hey! That's my name. Please enter YOUR name! 😄");
-                return;
-            }
-
+           // 4. Aapki apni pehchan ko bachana (Gupta allowed, but Vaishnav/VSG blocked)
+if (lowerName.includes("vaishnav") || lowerName.includes("vsg")) {
+    alert("Hey! That's my name. Please enter YOUR name! 😄");
+    return;
+}
             // 5. Sabse badi BLACKLIST
             const fakeNames = [
                 "abc", "xyz", "asd", "qwe", "zxc", "test", "dummy", "admin", "user", "guest", 
