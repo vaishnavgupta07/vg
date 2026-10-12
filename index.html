@@ -307,6 +307,7 @@
                         <div class="text-3xl mb-3"><i class="fas fa-hands-helping"></i></div>
                         Extension Work
                     </a>
+
                     <!-- 7. Fintech Startup -->
                     <a href="fintech.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
                         <div class="text-3xl mb-3"><i class="fas fa-wallet"></i></div>
@@ -327,6 +328,7 @@
                         <p>Theory of Computation notes coming soon...</p>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
@@ -384,28 +386,42 @@
             });
         });
 
-        // Welcome Popup & Returning Visitor Logic
-        function updateNavName(name, isReturning) {
+        // Welcome Popup Logic
+        function updateNavName(name) {
             const desktopName = document.getElementById('nav-visitor-name-desktop');
             const mobileName = document.getElementById('nav-visitor-name-mobile');
             
-            // agar purana banda hai to Welcome back, naya hai to Hi
-            const greeting = isReturning ? "Welcome back, " : "Hi, ";
-            
             if (desktopName && mobileName) {
-                desktopName.innerText = greeting + name + " 👋";
+                desktopName.innerText = "Hi, " + name + " 👋";
                 desktopName.classList.remove('hidden');
-                mobileName.innerText = greeting + name + " 👋";
+                mobileName.innerText = "Hi, " + name + " 👋";
                 mobileName.classList.remove('hidden');
             }
         }
 
+        // --- 5 ghante wale timer ka logic ---
         document.addEventListener("DOMContentLoaded", () => {
-            // sessionStorage ki jagah localStorage ka istemal
             const savedName = localStorage.getItem('visitorName');
+            const savedTime = localStorage.getItem('visitorTimestamp');
             
-            if (!savedName) {
-                // Naya visitor hai - popup dikhao
+            const now = new Date().getTime();
+            const fiveHours = 5 * 60 * 60 * 1000; // 5 hours in milliseconds
+            
+            let shouldAskName = true;
+
+            // Agar naam aur time dono save hain
+            if (savedName && savedTime) {
+                // Check karo ki 5 ghante beete hain ya nahi
+                if (now - parseInt(savedTime) < fiveHours) {
+                    shouldAskName = false; // 5 ghante nahi beete, naam mat pucho
+                } else {
+                    // 5 ghante beet gaye, purana data delete kar do
+                    localStorage.removeItem('visitorName');
+                    localStorage.removeItem('visitorTimestamp');
+                }
+            }
+            
+            if (shouldAskName) {
                 setTimeout(() => {
                     document.getElementById('modal-step-1').classList.remove('hidden');
                     document.getElementById('modal-step-2').classList.add('hidden');
@@ -413,63 +429,78 @@
                     document.getElementById('welcome-modal').classList.remove('hidden');
                 }, 500); 
             } else {
-                // Purana visitor wapas aaya hai - popup mat dikhao, sirf 'Welcome back' kaho
-                updateNavName(savedName, true);
+                updateNavName(savedName);
             }
         });
 
         function submitName() {
             const nameInput = document.getElementById('visitor-name').value.trim();
+            const lowerName = nameInput.toLowerCase();
             
-            // 1. Empty Check
+            // 1. Khali na ho
             if (nameInput === "") {
                 alert("Please enter your name!");
                 return;
             }
 
-            // 2. Numbers/Symbols Check
+            // 2. Sirf akshar (Numbers/Symbols mana hain)
             const nameRegex = /^[A-Za-z\s]+$/;
             if (!nameRegex.test(nameInput)) {
                 alert("Please enter a valid name! (Numbers and symbols are not allowed)");
                 return;
             }
 
-            // 3. Length Check
-            if (nameInput.length < 3) {
-                alert("Name is too short! Please enter your full name.");
+            // 3. Naam kam se kam 3 aur jyada se jyada 25 aksharon ka hona chahiye
+            if (nameInput.length < 3 || nameInput.length > 25) {
+                alert("Please enter your full real name.");
                 return;
             }
 
-            // 4. Owner Check
-            const lowerName = nameInput.toLowerCase();
+            // 4. Aapki apni pehchan ko bachana
             if (lowerName.includes("vaishnav") || lowerName.includes("vsg") || lowerName.includes("gupta")) {
                 alert("Hey! That's my name. Please enter YOUR name! 😄");
                 return;
             }
 
-            // 5. Gibberish (Random Typing) Filter
+            // 5. Sabse badi BLACKLIST
+            const fakeNames = [
+                "abc", "xyz", "asd", "qwe", "zxc", "test", "dummy", "admin", "user", "guest", 
+                "asdf", "qwer", "zxcv", "abcd", "qaz", "wsx", "edc", "rfv", "tgb", "yhn", "ujm", "ikm", "none"
+            ];
+            
+            const isFake = fakeNames.some(fake => lowerName === fake);
+            if (isFake) {
+                alert("Please enter a proper real name! (Fake words are not allowed 🤨)");
+                return;
+            }
+
+            // 6. Random typing (Gibberish) filter
             const hasVowel = /[aeiouyAEIOUY]/.test(nameInput);
             const threeConsecutive = /(.)\1{2,}/.test(nameInput);
             const fourConsonants = /[^aeiouyAEIOUY\s]{4,}/.test(nameInput);
             const startWithDoubleConsonant = /^([^aeiouyAEIOUY\s])\1/i.test(nameInput);
+            
+            // 7. Kam se kam 3 alag-alag akshar hone chahiye
+            const uniqueChars = new Set(lowerName.replace(/\s/g, '')).size;
 
-            if (!hasVowel || threeConsecutive || fourConsonants || startWithDoubleConsonant) {
-                alert("Please enter a proper real name! (Random typing is not allowed 🤨)");
+            if (!hasVowel || threeConsecutive || fourConsonants || startWithDoubleConsonant || uniqueChars < 3) {
+                alert("Please enter a proper real human name! 🤨");
                 return;
             }
 
-            // Agar naam sahi hai, to aage badho
+            // Agar saare test pass ho gaye, to naam accept kar lo
             const name = nameInput;
             
             document.getElementById('modal-step-1').classList.add('hidden');
             document.getElementById('modal-step-2').classList.remove('hidden');
             document.getElementById('display-name').innerText = name;
 
-            // Naam ko hamesha ke liye save karna (localStorage me)
+            // Naam aur current time ko localStorage me save karna 
             localStorage.setItem('visitorName', name);
-            updateNavName(name, false); // false matlab naya visitor (Hi bolega)
+            localStorage.setItem('visitorTimestamp', new Date().getTime());
+            updateNavName(name); 
 
-            // --- GOOGLE SHEETS INTEGRATION (Sirf naye logon ke liye chalega) ---
+            // --- GOOGLE SHEETS INTEGRATION ---
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzi6LiuI-TkGBGCRk1kfmyu0FKYRVeTsu-3m0v_D3vnXXiIlEs-f6zlRmHj1PzXI2W61A/exec'; 
             
             const formData = new FormData();
