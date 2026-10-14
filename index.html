@@ -8,6 +8,16 @@
     <meta name="author" content="Vaishnav Shailesh Gupta">
     <title>Vaishnav Shailesh Gupta | Portfolio & Notes</title>
     
+    <!-- Favicon (Google Search Logo) -->
+    <link rel="icon" type="image/jpeg" href="https://github.com/vaishnavgupta07/vg/blob/main/%E2%80%ABimage.jpeg?raw=true">
+    
+    <!-- WhatsApp & LinkedIn Preview Tags (Open Graph) -->
+    <meta property="og:title" content="Vaishnav Shailesh Gupta | Portfolio & Notes">
+    <meta property="og:description" content="Personal Portfolio and Educational Notes of Vaishnav Shailesh Gupta, BSc Computer Science student and software developer.">
+    <meta property="og:image" content="https://github.com/vaishnavgupta07/vg/blob/main/%E2%80%ABimage.jpeg?raw=true">
+    <meta property="og:url" content="https://vaishnavgupta07.netlify.app/">
+    <meta property="og:type" content="website">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -456,11 +466,12 @@
                 return;
             }
 
-           // 4. Aapki apni pehchan ko bachana (Gupta allowed, but Vaishnav/VSG blocked)
-if (lowerName.includes("vaishnav") || lowerName.includes("vsg")) {
-    alert("Hey! That's my name. Please enter YOUR name! 😄");
-    return;
-}
+            // 4. Aapki apni pehchan ko bachana (Gupta allowed, but Vaishnav/VSG blocked)
+            if (lowerName.includes("vaishnav") || lowerName.includes("vsg")) {
+                alert("Hey! That's my name. Please enter YOUR name! 😄");
+                return;
+            }
+
             // 5. Sabse badi BLACKLIST
             const fakeNames = [
                 "abc", "xyz", "asd", "qwe", "zxc", "test", "dummy", "admin", "user", "guest", 
