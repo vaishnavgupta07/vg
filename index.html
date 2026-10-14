@@ -1,570 +1,527 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio and Educational Notes of Vaishnav Shailesh Gupta, BSc Computer Science student and software developer.">
-    <meta name="keywords" content="Vaishnav Shailesh Gupta, Portfolio, Notes, Computer Science, Developer, Web Design, Universal MSG SGKM College">
-    <meta name="author" content="Vaishnav Shailesh Gupta">
-    <title>Vaishnav Shailesh Gupta | Portfolio & Notes</title>
-    
-    <!-- Favicon (Google Search Logo) -->
-    <link rel="icon" type="image/jpeg" href="https://github.com/vaishnavgupta07/vg/blob/main/%E2%80%ABimage.jpeg?raw=true">
-    
-    <!-- WhatsApp & LinkedIn Preview Tags (Open Graph) -->
-    <meta property="og:title" content="Vaishnav Shailesh Gupta | Portfolio & Notes">
-    <meta property="og:description" content="Personal Portfolio and Educational Notes of Vaishnav Shailesh Gupta, BSc Computer Science student and software developer.">
-    <meta property="og:image" content="https://github.com/vaishnavgupta07/vg/blob/main/%E2%80%ABimage.jpeg?raw=true">
-    <meta property="og:url" content="https://vaishnavgupta07.netlify.app/">
-    <meta property="og:type" content="website">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            900: '#1e3a8a',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        body { font-family: 'Inter', sans-serif; }
-    </style>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio and Educational Notes of Vaishnav Shailesh Gupta, BSc Computer Science student and software developer.">
+    <meta name="keywords" content="Vaishnav Shailesh Gupta, Portfolio, Notes, Computer Science, Developer, Web Design, Universal MSG SGKM College">
+    <meta name="author" content="Vaishnav Shailesh Gupta">
+    <title>Vaishnav Shailesh Gupta | Portfolio & Notes</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-    
-<script>
-  // Basic deterrent against casual inspection
-  document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-  });
-
-  document.addEventListener("keydown", function (e) {
-    const key = e.key.toLowerCase();
-
-    if (
-      e.key === "F12" ||
-      (e.ctrlKey && key === "u") ||
-      (e.ctrlKey && e.shiftKey &&
-        ["i", "j", "c"].includes(key))
-    ) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  }, true);
-
-  // Discourage copying website text
-  document.addEventListener("copy", function (e) {
-    e.preventDefault();
-  });
-
-  document.addEventListener("cut", function (e) {
-    e.preventDefault();
-  });
-</script>
-</body>
-
 <body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-500 selection:text-white">
-    
-    <!-- Welcome Popup Modal -->
-    <div id="welcome-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-900/60 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-2xl shadow-2xl w-11/12 max-w-md p-6 transform transition-all text-center">
-            
-            <!-- Step 1: Naam Poochne wala box -->
-            <div id="modal-step-1">
-                <div class="w-16 h-16 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                    <i class="fas fa-hand-sparkles"></i>
-                </div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Welcome to VG website</h2>
-                <p class="text-gray-500 mb-6">May I know your good name?</p>
-                <input type="text" id="visitor-name" placeholder="Enter your name..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all mb-4 outline-none text-center font-medium">
-                <button onclick="submitName()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-colors">
-                    Continue
-                </button>
-            </div>
-            
-            <!-- Step 2: Thanks bolne wala box -->
-            <div id="modal-step-2" class="hidden py-4">
-                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Thanks for coming, <br><span id="display-name" class="text-brand-600"></span>!</h2>
-                <p class="text-gray-500 mt-2">Enjoy exploring my work and notes.</p>
-            </div>
-            
-        </div>
-    </div>
+    
+    <!-- Welcome Popup Modal -->
+    <div id="welcome-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-900/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-2xl shadow-2xl w-11/12 max-w-md p-6 transform transition-all text-center">
+            
+            <!-- Step 1: Naam Poochne wala box -->
+            <div id="modal-step-1">
+                <div class="w-16 h-16 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                    <i class="fas fa-hand-sparkles"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Welcome to VG website</h2>
+                <p class="text-gray-500 mb-6">May I know your good name?</p>
+                <input type="text" id="visitor-name" placeholder="Enter your name..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all mb-4 outline-none text-center font-medium">
+                <button onclick="submitName()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-colors">
+                    Continue
+                </button>
+            </div>
+            
+            <!-- Step 2: Thanks bolne wala box -->
+            <div id="modal-step-2" class="hidden py-4">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Thanks for coming, <br><span id="display-name" class="text-brand-600"></span>!</h2>
+                <p class="text-gray-500 mt-2">Enjoy exploring my work and notes.</p>
+            </div>
+            
+        </div>
+    </div>
 
-    <!-- HEADER START -->
-    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="font-bold text-xl text-brand-900 tracking-tight">VSG.</a>
-                    <!-- Desktop: Visitor Name Display -->
-                    <span id="nav-visitor-name-desktop" class="ml-4 text-sm font-medium text-brand-600 bg-brand-50 px-3 py-1 rounded-full hidden"></span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-gray-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
-                    <a href="#experience" class="text-gray-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Experience & Projects</a>
-                    <a href="#notes" class="text-gray-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Notes</a>
-                    
-                    <!-- Desktop: Total Views Counter -->
-                    <div class="flex items-center gap-2 bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200 shadow-sm">
-                        <i class="fas fa-eye text-brand-500 text-sm"></i>
-                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fvaishnavsg.com&countColor=%232563eb" alt="visitor badge" class="h-4" />
-                    </div>
-                </nav>
+    <!-- HEADER START -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-bold text-xl text-brand-900 tracking-tight">VSG.</a>
+                    <!-- Desktop: Visitor Name Display -->
+                    <span id="nav-visitor-name-desktop" class="ml-4 text-sm font-medium text-brand-600 bg-brand-50 px-3 py-1 rounded-full hidden"></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                    <a href="#experience" class="text-gray-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Experience & Projects</a>
+                    <a href="#notes" class="text-gray-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Notes</a>
+                    
+                    <!-- Desktop: Total Views Counter -->
+                    <div class="flex items-center gap-2 bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200 shadow-sm">
+                        <i class="fas fa-eye text-brand-500 text-sm"></i>
+                        <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fvaishnavsg.com&countColor=%232563eb" alt="visitor badge" class="h-4" />
+                    </div>
+                </nav>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-md p-2">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-md p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
-                <!-- Mobile: Visitor Name Display -->
-                <div id="nav-visitor-name-mobile" class="block px-3 py-2 mb-2 text-sm font-medium text-brand-600 bg-brand-50 rounded-md hidden"></div>
-                
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">About</a>
-                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Experience</a>
-                <a href="#notes" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Notes</a>
-                
-                <!-- Mobile: Total Views Counter -->
-                <div class="block px-3 py-2 mt-2 mx-3 rounded-md bg-brand-50 border border-brand-100 flex items-center gap-2 w-max">
-                    <i class="fas fa-eye text-brand-500"></i>
-                    <span class="text-sm text-gray-600 font-bold">Views:</span>
-                    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fvaishnavsg.com&countColor=%232563eb" alt="visitor badge" class="h-5" />
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- HEADER END -->
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <!-- Mobile: Visitor Name Display -->
+                <div id="nav-visitor-name-mobile" class="block px-3 py-2 mb-2 text-sm font-medium text-brand-600 bg-brand-50 rounded-md hidden"></div>
+                
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Experience</a>
+                <a href="#notes" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Notes</a>
+                
+                <!-- Mobile: Total Views Counter -->
+                <div class="block px-3 py-2 mt-2 mx-3 rounded-md bg-brand-50 border border-brand-100 flex items-center gap-2 w-max">
+                    <i class="fas fa-eye text-brand-500"></i>
+                    <span class="text-sm text-gray-600 font-bold">Views:</span>
+                    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fvaishnavsg.com&countColor=%232563eb" alt="visitor badge" class="h-5" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER END -->
 
-    <main class="pt-16">
-        <section class="relative bg-white overflow-hidden py-16 sm:py-24 lg:py-32">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="text-center md:text-left order-2 md:order-1">
-                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                            <span class="block text-gray-500 text-xl sm:text-2xl font-medium mb-2">Hello, I am</span>
-                            <span class="block text-brand-600">Vaishnav Shailesh</span>
-                            <span class="block">Gupta</span>
-                        </h1>
-                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                            Computer Science student, software developer, and tech enthusiast based in Navi Mumbai. Welcome to my digital workspace where I share my projects, experience, and educational notes.
-                        </p>
-                        <div class="mt-8 flex justify-center md:justify-start gap-4">
-                            <a href="#notes" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 shadow-md transition-all">
-                                Access Notes
-                            </a>
-                            <a href="#experience" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 shadow-sm transition-all">
-                                View Projects
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="flex justify-center order-1 md:order-2">
-                        <div class="relative w-64 h-64 sm:w-80 sm:h-80">
-                            <img class="rounded-full object-cover shadow-2xl border-4 border-white w-full h-full" 
-                                 src="https://github.com/vaishnavgupta07/vg/blob/main/%E2%80%ABimage.jpeg?raw=true" 
-                                 alt="Vaishnav Shailesh Gupta">
-                            <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg text-brand-500">
-                                <i class="fas fa-code text-2xl"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <main class="pt-16">
+        <section class="relative bg-white overflow-hidden py-16 sm:py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left order-2 md:order-1">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block text-gray-500 text-xl sm:text-2xl font-medium mb-2">Hello, I am</span>
+                            <span class="block text-brand-600">Vaishnav Shailesh</span>
+                            <span class="block">Gupta</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Computer Science student, software developer, and tech enthusiast based in Navi Mumbai. Welcome to my digital workspace where I share my projects, experience, and educational notes.
+                        </p>
+                        <div class="mt-8 flex justify-center md:justify-start gap-4">
+                            <a href="#notes" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 shadow-md transition-all">
+                                Access Notes
+                            </a>
+                            <a href="#experience" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 shadow-sm transition-all">
+                                View Projects
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center order-1 md:order-2">
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80">
+                            <img class="rounded-full object-cover shadow-2xl border-4 border-white w-full h-full" 
+                                 src="https://placehold.co/600x600/2563eb/ffffff?text=VSG" 
+                                 alt="Vaishnav Shailesh Gupta">
+                            <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg text-brand-500">
+                                <i class="fas fa-code text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="about" class="py-16 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:text-center mb-12">
-                    <h2 class="text-base text-brand-600 font-semibold tracking-wide uppercase">About Me</h2>
-                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                        Student & Developer
-                    </p>
-                </div>
+        <section id="about" class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:text-center mb-12">
+                    <h2 class="text-base text-brand-600 font-semibold tracking-wide uppercase">About Me</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Student & Developer
+                    </p>
+                </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                                <i class="fas fa-graduation-cap text-brand-500 mr-3"></i> Education
-                            </h3>
-                            <div class="pl-8 border-l-2 border-brand-100">
-                                <p class="font-semibold text-lg text-gray-800">BSc Computer Science</p>
-                                <p class="text-gray-600">Universal MSG SGKM College</p>
-                                <p class="text-sm text-brand-600 font-medium mt-1">Expected Graduation: May 2027</p>
-                            </div>
-                            
-                            <h3 class="text-xl font-bold text-gray-900 mb-4 mt-8 flex items-center">
-                                <i class="fas fa-map-marker-alt text-brand-500 mr-3"></i> Location
-                            </h3>
-                            <p class="text-gray-600 pl-8">Based in Navi Mumbai, Maharashtra, India.</p>
-                        </div>
-                        
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                                <i class="fas fa-heart text-brand-500 mr-3"></i> Passions & Interests
-                            </h3>
-                            <p class="text-gray-600 mb-4">
-                                I am deeply passionate about building software that solves real-world problems. My core areas of interest include:
-                            </p>
-                            <ul class="space-y-3">
-                                <li class="flex items-center text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-100">
-                                    <i class="fas fa-laptop-code text-brand-500 w-6 text-center mr-2"></i> Software Development
-                                </li>
-                                <li class="flex items-center text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-100">
-                                    <i class="fas fa-paint-brush text-brand-500 w-6 text-center mr-2"></i> Web Design
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                                <i class="fas fa-graduation-cap text-brand-500 mr-3"></i> Education
+                            </h3>
+                            <div class="pl-8 border-l-2 border-brand-100">
+                                <p class="font-semibold text-lg text-gray-800">BSc Computer Science</p>
+                                <p class="text-gray-600">Universal MSG SGKM College</p>
+                                <p class="text-sm text-brand-600 font-medium mt-1">Expected Graduation: May 2027</p>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 mt-8 flex items-center">
+                                <i class="fas fa-map-marker-alt text-brand-500 mr-3"></i> Location
+                            </h3>
+                            <p class="text-gray-600 pl-8">Based in Navi Mumbai, Maharashtra, India.</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                                <i class="fas fa-heart text-brand-500 mr-3"></i> Passions & Interests
+                            </h3>
+                            <p class="text-gray-600 mb-4">
+                                I am deeply passionate about building software that solves real-world problems. My core areas of interest include:
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-100">
+                                    <i class="fas fa-laptop-code text-brand-500 w-6 text-center mr-2"></i> Software Development
+                                </li>
+                                <li class="flex items-center text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-100">
+                                    <i class="fas fa-paint-brush text-brand-500 w-6 text-center mr-2"></i> Web Design
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="experience" class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:text-center mb-12">
-                    <h2 class="text-base text-brand-600 font-semibold tracking-wide uppercase">Portfolio</h2>
-                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                        Experience & Projects
-                    </p>
-                </div>
+        <section id="experience" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:text-center mb-12">
+                    <h2 class="text-base text-brand-600 font-semibold tracking-wide uppercase">Portfolio</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Experience & Projects
+                    </p>
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
-                        <div class="h-48 bg-gradient-to-r from-brand-500 to-brand-700 flex items-center justify-center">
-                            <i class="fas fa-users-cog text-white text-5xl opacity-80"></i>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <div class="uppercase tracking-wide text-xs text-brand-600 font-bold mb-1">Community Role</div>
-                            <h3 class="block mt-1 text-xl leading-tight font-bold text-gray-900 mb-2">GeeksforGeeks Core Team</h3>
-                            <p class="mt-2 text-gray-600">Active core team member contributing to technical events, community building, and peer learning initiatives.</p>
-                        </div>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
+                        <div class="h-48 bg-gradient-to-r from-brand-500 to-brand-700 flex items-center justify-center">
+                            <i class="fas fa-users-cog text-white text-5xl opacity-80"></i>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="uppercase tracking-wide text-xs text-brand-600 font-bold mb-1">Community Role</div>
+                            <h3 class="block mt-1 text-xl leading-tight font-bold text-gray-900 mb-2">GeeksforGeeks Core Team</h3>
+                            <p class="mt-2 text-gray-600">Active core team member contributing to technical events, community building, and peer learning initiatives.</p>
+                        </div>
+                    </div>
 
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
-                        <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
-                            <i class="fas fa-bug text-white text-5xl opacity-80"></i>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <div class="uppercase tracking-wide text-xs text-brand-600 font-bold mb-1">Event Organization</div>
-                            <h3 class="block mt-1 text-xl leading-tight font-bold text-gray-900 mb-2">Bug Buster Organizer</h3>
-                            <p class="mt-2 text-gray-600">Successfully organized an intensive debugging competition in the college computer lab, fostering problem-solving skills among students.</p>
-                        </div>
-                    </div>
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
+                        <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
+                            <i class="fas fa-bug text-white text-5xl opacity-80"></i>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="uppercase tracking-wide text-xs text-brand-600 font-bold mb-1">Event Organization</div>
+                            <h3 class="block mt-1 text-xl leading-tight font-bold text-gray-900 mb-2">Bug Buster Organizer</h3>
+                            <p class="mt-2 text-gray-600">Successfully organized an intensive debugging competition in the college computer lab, fostering problem-solving skills among students.</p>
+                        </div>
+                    </div>
 
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
-                        <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
-                            <i class="fas fa-hospital text-white text-5xl opacity-80"></i>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <div class="uppercase tracking-wide text-xs text-brand-600 font-bold mb-1">Research Project</div>
-                            <h3 class="block mt-1 text-xl leading-tight font-bold text-gray-900 mb-2">Hospital Management Survey</h3>
-                            <p class="mt-2 text-gray-600">Conducted a comprehensive research project titled 'Survey of Hospital Management Systems', analyzing system efficiencies and data structures.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
+                        <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
+                            <i class="fas fa-hospital text-white text-5xl opacity-80"></i>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="uppercase tracking-wide text-xs text-brand-600 font-bold mb-1">Research Project</div>
+                            <h3 class="block mt-1 text-xl leading-tight font-bold text-gray-900 mb-2">Hospital Management Survey</h3>
+                            <p class="mt-2 text-gray-600">Conducted a comprehensive research project titled 'Survey of Hospital Management Systems', analyzing system efficiencies and data structures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Educational Notes Section -->
-        <section id="notes" class="py-16 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:text-center mb-12">
-                    <h2 class="text-base text-brand-600 font-semibold tracking-wide uppercase">Resources</h2>
-                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                        Study Notes
-                    </p>
-                    <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                        Select a subject below to view the practicals and notes. Feel free to copy and use them.
-                    </p>
-                </div>
+        <!-- Educational Notes Section -->
+        <section id="notes" class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:text-center mb-12">
+                    <h2 class="text-base text-brand-600 font-semibold tracking-wide uppercase">Resources</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Study Notes
+                    </p>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                        Select a subject below to view the practicals and notes. Feel free to copy and use them.
+                    </p>
+                </div>
 
-                <!-- Subject Tabs Navigation (Box Style - 8 Subjects) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-                    
-                    <!-- 1. Principal of Operating System -->
-                    <a href="pos.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all text-center block cursor-pointer">
-                        <div class="text-3xl mb-3"><i class="fas fa-microchip text-indigo-500"></i></div>
-                        Principal of Operating System
-                    </a> 
+                <!-- Subject Tabs Navigation (Box Style - 8 Subjects) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                    
+                    <!-- 1. Principal of Operating System -->
+                    <a href="pos.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all text-center block cursor-pointer">
+                        <div class="text-3xl mb-3"><i class="fas fa-microchip text-indigo-500"></i></div>
+                        Principal of Operating System
+                    </a> 
 
-                    <!-- 2. Java Script -->
-                    <a href="java.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
-                        <div class="text-3xl mb-3"><i class="fab fa-js text-yellow-500"></i></div>
-                        Java Script
-                    </a>
+                    <!-- 2. Java Script -->
+                    <a href="java.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
+                        <div class="text-3xl mb-3"><i class="fab fa-js text-yellow-500"></i></div>
+                        Java Script
+                    </a>
 
-                    <!-- 3. Data Structures -->
-                    <a href="ds.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
-                        <div class="text-3xl mb-3"><i class="fas fa-network-wired"></i></div>
-                        Data Structures
-                    </a>                   
-                    
-                    <!-- 4. Theory of Computation -->
-                    <button class="tab-btn bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center" data-target="toc">
-                        <div class="text-3xl mb-3"><i class="fas fa-laptop-code"></i></div>
-                        Theory of Computation
-                    </button>
+                    <!-- 3. Data Structures -->
+                    <a href="ds.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
+                        <div class="text-3xl mb-3"><i class="fas fa-network-wired"></i></div>
+                        Data Structures
+                    </a>                   
+                    
+                    <!-- 4. Theory of Computation -->
+                    <button class="tab-btn bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center" data-target="toc">
+                        <div class="text-3xl mb-3"><i class="fas fa-laptop-code"></i></div>
+                        Theory of Computation
+                    </button>
 
-                    <!-- 5. Operation Research -->
-                    <a href="or.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all text-center block cursor-pointer">
-                        <div class="text-3xl mb-3"><i class="fas fa-chart-pie"></i></div>
-                        Operation Research
-                    </a>
+                    <!-- 5. Operation Research -->
+                    <a href="or.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all text-center block cursor-pointer">
+                        <div class="text-3xl mb-3"><i class="fas fa-chart-pie"></i></div>
+                        Operation Research
+                    </a>
 
-                    <!-- 6. Extension Work -->
-                    <a href="ew.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
-                        <div class="text-3xl mb-3"><i class="fas fa-hands-helping"></i></div>
-                        Extension Work
-                    </a>
+                    <!-- 6. Extension Work -->
+                    <a href="ew.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
+                        <div class="text-3xl mb-3"><i class="fas fa-hands-helping"></i></div>
+                        Extension Work
+                    </a>
 
-                    <!-- 7. Fintech Startup -->
-                    <a href="fintech.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
-                        <div class="text-3xl mb-3"><i class="fas fa-wallet"></i></div>
-                        Fintech Startup
-                    </a>
+                    <!-- 7. Fintech Startup -->
+                    <a href="fintech.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
+                        <div class="text-3xl mb-3"><i class="fas fa-wallet"></i></div>
+                        Fintech Startup
+                    </a>
 
-                    <!-- 8. Hindi -->
-                    <a href="hindi.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
-                        <div class="text-3xl mb-3"><i class="fas fa-language"></i></div>
-                        Hindi
-                    </a>
-                </div>
+                    <!-- 8. Hindi -->
+                    <a href="hindi.html" class="bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center block cursor-pointer">
+                        <div class="text-3xl mb-3"><i class="fas fa-language"></i></div>
+                        Hindi
+                    </a>
+                </div>
 
-                <!-- 4. Theory of Computation Content -->
-                <div id="toc" class="tab-content space-y-8 hidden">
-                    <div class="bg-white p-8 rounded-xl border border-gray-200 text-center text-gray-500 shadow-sm">
-                        <i class="fas fa-folder-open text-3xl mb-3 text-gray-300"></i>
-                        <p>Theory of Computation notes coming soon...</p>
-                    </div>
-                </div>
+                <!-- 4. Theory of Computation Content -->
+                <div id="toc" class="tab-content space-y-8 hidden">
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 text-center text-gray-500 shadow-sm">
+                        <i class="fas fa-folder-open text-3xl mb-3 text-gray-300"></i>
+                        <p>Theory of Computation notes coming soon...</p>
+                    </div>
+                </div>
 
-            </div>
-        </section>
-    </main>
+            </div>
+        </section>
+    </main>
 
-    <footer class="bg-white border-t border-gray-200 pt-12 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex md:items-center md:justify-between">
-                <div class="flex justify-center md:justify-start space-x-6 md:order-2">
-                    <a href="#" class="text-gray-400 hover:text-brand-500">
-                        <span class="sr-only">GitHub</span>
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-brand-500">
-                        <span class="sr-only">LinkedIn</span>
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                </div>
-                <div class="mt-8 md:mt-0 md:order-1 flex flex-col items-center md:items-start">
-                    <p class="text-center text-base text-gray-500">
-                        &copy; 2024 Vaishnav Shailesh Gupta. All rights reserved. <br class="sm:hidden"> Designed for SEO and accessibility.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer class="bg-white border-t border-gray-200 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:justify-start space-x-6 md:order-2">
+                    <a href="#" class="text-gray-400 hover:text-brand-500">
+                        <span class="sr-only">GitHub</span>
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-brand-500">
+                        <span class="sr-only">LinkedIn</span>
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1 flex flex-col items-center md:items-start">
+                    <p class="text-center text-base text-gray-500">
+                        &copy; 2024 Vaishnav Shailesh Gupta. All rights reserved. <br class="sm:hidden"> Designed for SEO and accessibility.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Standard Scripts -->
-    <script>
-        // Mobile Menu
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
-        const mobileLinks = menu.querySelectorAll('a');
-        mobileLinks.forEach(link => { link.addEventListener('click', () => { menu.classList.add('hidden'); }); });
+    <!-- Standard Scripts -->
+    <script>
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => { link.addEventListener('click', () => { menu.classList.add('hidden'); }); });
 
-        // Tab Switching Logic
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
+        // Tab Switching Logic
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                tabBtns.forEach(b => {
-                    b.className = 'tab-btn bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center';
-                });
-                btn.className = 'tab-btn bg-brand-50 border-2 border-brand-500 text-brand-700 shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center transform scale-105';
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => {
+                    b.className = 'tab-btn bg-white border border-gray-200 text-gray-500 hover:text-brand-600 hover:border-brand-300 hover:shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center';
+                });
+                btn.className = 'tab-btn bg-brand-50 border-2 border-brand-500 text-brand-700 shadow-md rounded-xl p-6 font-bold transition-all focus:outline-none text-center transform scale-105';
 
-                tabContents.forEach(content => {
-                    content.classList.remove('block');
-                    content.classList.add('hidden');
-                });
+                tabContents.forEach(content => {
+                    content.classList.remove('block');
+                    content.classList.add('hidden');
+                });
 
-                const targetId = btn.getAttribute('data-target');
-                document.getElementById(targetId).classList.remove('hidden');
-                document.getElementById(targetId).classList.add('block');
-            });
-        });
+                const targetId = btn.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+                document.getElementById(targetId).classList.add('block');
+            });
+        });
 
-        // Welcome Popup Logic
-        function updateNavName(name) {
-            const desktopName = document.getElementById('nav-visitor-name-desktop');
-            const mobileName = document.getElementById('nav-visitor-name-mobile');
-            
-            if (desktopName && mobileName) {
-                desktopName.innerText = "Hi, " + name + " 👋";
-                desktopName.classList.remove('hidden');
-                mobileName.innerText = "Hi, " + name + " 👋";
-                mobileName.classList.remove('hidden');
-            }
-        }
+        // Welcome Popup Logic
+        function updateNavName(name) {
+            const desktopName = document.getElementById('nav-visitor-name-desktop');
+            const mobileName = document.getElementById('nav-visitor-name-mobile');
+            
+            if (desktopName && mobileName) {
+                desktopName.innerText = "Hi, " + name + " 👋";
+                desktopName.classList.remove('hidden');
+                mobileName.innerText = "Hi, " + name + " 👋";
+                mobileName.classList.remove('hidden');
+            }
+        }
 
-        // --- 5 ghante wale timer ka logic ---
-        document.addEventListener("DOMContentLoaded", () => {
-            const savedName = localStorage.getItem('visitorName');
-            const savedTime = localStorage.getItem('visitorTimestamp');
-            
-            const now = new Date().getTime();
-            const fiveHours = 5 * 60 * 60 * 1000; // 5 hours in milliseconds
-            
-            let shouldAskName = true;
+        // --- 5 ghante wale timer ka logic ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedName = localStorage.getItem('visitorName');
+            const savedTime = localStorage.getItem('visitorTimestamp');
+            
+            const now = new Date().getTime();
+            const fiveHours = 5 * 60 * 60 * 1000; // 5 hours in milliseconds
+            
+            let shouldAskName = true;
 
-            // Agar naam aur time dono save hain
-            if (savedName && savedTime) {
-                // Check karo ki 5 ghante beete hain ya nahi
-                if (now - parseInt(savedTime) < fiveHours) {
-                    shouldAskName = false; // 5 ghante nahi beete, naam mat pucho
-                } else {
-                    // 5 ghante beet gaye, purana data delete kar do
-                    localStorage.removeItem('visitorName');
-                    localStorage.removeItem('visitorTimestamp');
-                }
-            }
-            
-            if (shouldAskName) {
-                setTimeout(() => {
-                    document.getElementById('modal-step-1').classList.remove('hidden');
-                    document.getElementById('modal-step-2').classList.add('hidden');
-                    document.getElementById('visitor-name').value = ''; 
-                    document.getElementById('welcome-modal').classList.remove('hidden');
-                }, 500); 
-            } else {
-                updateNavName(savedName);
-            }
-        });
+            // Agar naam aur time dono save hain
+            if (savedName && savedTime) {
+                // Check karo ki 5 ghante beete hain ya nahi
+                if (now - parseInt(savedTime) < fiveHours) {
+                    shouldAskName = false; // 5 ghante nahi beete, naam mat pucho
+                } else {
+                    // 5 ghante beet gaye, purana data delete kar do
+                    localStorage.removeItem('visitorName');
+                    localStorage.removeItem('visitorTimestamp');
+                }
+            }
+            
+            if (shouldAskName) {
+                setTimeout(() => {
+                    document.getElementById('modal-step-1').classList.remove('hidden');
+                    document.getElementById('modal-step-2').classList.add('hidden');
+                    document.getElementById('visitor-name').value = ''; 
+                    document.getElementById('welcome-modal').classList.remove('hidden');
+                }, 500); 
+            } else {
+                updateNavName(savedName);
+            }
+        });
 
-        function submitName() {
-            const nameInput = document.getElementById('visitor-name').value.trim();
-            const lowerName = nameInput.toLowerCase();
-            
-            // 1. Khali na ho
-            if (nameInput === "") {
-                alert("Please enter your name!");
-                return;
-            }
+        function submitName() {
+            const nameInput = document.getElementById('visitor-name').value.trim();
+            const lowerName = nameInput.toLowerCase();
+            
+            // 1. Khali na ho
+            if (nameInput === "") {
+                alert("Please enter your name!");
+                return;
+            }
 
-            // 2. Sirf akshar (Numbers/Symbols mana hain)
-            const nameRegex = /^[A-Za-z\s]+$/;
-            if (!nameRegex.test(nameInput)) {
-                alert("Please enter a valid name! (Numbers and symbols are not allowed)");
-                return;
-            }
+            // 2. Sirf akshar (Numbers/Symbols mana hain)
+            const nameRegex = /^[A-Za-z\s]+$/;
+            if (!nameRegex.test(nameInput)) {
+                alert("Please enter a valid name! (Numbers and symbols are not allowed)");
+                return;
+            }
 
-            // 3. Naam kam se kam 3 aur jyada se jyada 25 aksharon ka hona chahiye
-            if (nameInput.length < 3 || nameInput.length > 25) {
-                alert("Please enter your full real name.");
-                return;
-            }
+            // 3. Naam kam se kam 3 aur jyada se jyada 25 aksharon ka hona chahiye
+            if (nameInput.length < 3 || nameInput.length > 25) {
+                alert("Please enter your full real name.");
+                return;
+            }
 
-            // 4. Aapki apni pehchan ko bachana (Gupta allowed, but Vaishnav/VSG blocked)
-            if (lowerName.includes("vaishnav") || lowerName.includes("vsg")) {
-                alert("Hey! That's my name. Please enter YOUR name! 😄");
-                return;
-            }
+            // 4. Aapki apni pehchan ko bachana
+            if (lowerName.includes("vaishnav") || lowerName.includes("vsg") || lowerName.includes("gupta")) {
+                alert("Hey! That's my name. Please enter YOUR name! 😄");
+                return;
+            }
 
-            // 5. Sabse badi BLACKLIST
-            const fakeNames = [
-                "abc", "xyz", "asd", "qwe", "zxc", "test", "dummy", "admin", "user", "guest", 
-                "asdf", "qwer", "zxcv", "abcd", "qaz", "wsx", "edc", "rfv", "tgb", "yhn", "ujm", "ikm", "none"
-            ];
-            
-            const isFake = fakeNames.some(fake => lowerName === fake);
-            if (isFake) {
-                alert("Please enter a proper real name! (Fake words are not allowed 🤨)");
-                return;
-            }
+            // 5. Sabse badi BLACKLIST
+            const fakeNames = [
+                "abc", "xyz", "asd", "qwe", "zxc", "test", "dummy", "admin", "user", "guest", 
+                "asdf", "qwer", "zxcv", "abcd", "qaz", "wsx", "edc", "rfv", "tgb", "yhn", "ujm", "ikm", "none"
+            ];
+            
+            const isFake = fakeNames.some(fake => lowerName === fake);
+            if (isFake) {
+                alert("Please enter a proper real name! (Fake words are not allowed 🤨)");
+                return;
+            }
 
-            // 6. Random typing (Gibberish) filter
-            const hasVowel = /[aeiouyAEIOUY]/.test(nameInput);
-            const threeConsecutive = /(.)\1{2,}/.test(nameInput);
-            const fourConsonants = /[^aeiouyAEIOUY\s]{4,}/.test(nameInput);
-            const startWithDoubleConsonant = /^([^aeiouyAEIOUY\s])\1/i.test(nameInput);
-            
-            // 7. Kam se kam 3 alag-alag akshar hone chahiye
-            const uniqueChars = new Set(lowerName.replace(/\s/g, '')).size;
+            // 6. Random typing (Gibberish) filter
+            const hasVowel = /[aeiouyAEIOUY]/.test(nameInput);
+            const threeConsecutive = /(.)\1{2,}/.test(nameInput);
+            const fourConsonants = /[^aeiouyAEIOUY\s]{4,}/.test(nameInput);
+            const startWithDoubleConsonant = /^([^aeiouyAEIOUY\s])\1/i.test(nameInput);
+            
+            // 7. Kam se kam 3 alag-alag akshar hone chahiye
+            const uniqueChars = new Set(lowerName.replace(/\s/g, '')).size;
 
-            if (!hasVowel || threeConsecutive || fourConsonants || startWithDoubleConsonant || uniqueChars < 3) {
-                alert("Please enter a proper real human name! 🤨");
-                return;
-            }
+            if (!hasVowel || threeConsecutive || fourConsonants || startWithDoubleConsonant || uniqueChars < 3) {
+                alert("Please enter a proper real human name! 🤨");
+                return;
+            }
 
-            // Agar saare test pass ho gaye, to naam accept kar lo
-            const name = nameInput;
-            
-            document.getElementById('modal-step-1').classList.add('hidden');
-            document.getElementById('modal-step-2').classList.remove('hidden');
-            document.getElementById('display-name').innerText = name;
+            // Agar saare test pass ho gaye, to naam accept kar lo
+            const name = nameInput;
+            
+            document.getElementById('modal-step-1').classList.add('hidden');
+            document.getElementById('modal-step-2').classList.remove('hidden');
+            document.getElementById('display-name').innerText = name;
 
-            // Naam aur current time ko localStorage me save karna 
-            localStorage.setItem('visitorName', name);
-            localStorage.setItem('visitorTimestamp', new Date().getTime());
-            updateNavName(name); 
+            // Naam aur current time ko localStorage me save karna 
+            localStorage.setItem('visitorName', name);
+            localStorage.setItem('visitorTimestamp', new Date().getTime());
+            updateNavName(name); 
 
-            // --- GOOGLE SHEETS INTEGRATION ---
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzi6LiuI-TkGBGCRk1kfmyu0FKYRVeTsu-3m0v_D3vnXXiIlEs-f6zlRmHj1PzXI2W61A/exec'; 
-            
-            const formData = new FormData();
-            formData.append('name', name);
+            // --- GOOGLE SHEETS INTEGRATION ---
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzi6LiuI-TkGBGCRk1kfmyu0FKYRVeTsu-3m0v_D3vnXXiIlEs-f6zlRmHj1PzXI2W61A/exec'; 
+            
+            const formData = new FormData();
+            formData.append('name', name);
 
-            fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => console.log('Name saved successfully!'))
-                .catch(error => console.error('Error!', error.message));
-            // -------------------------------------------------------------
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => console.log('Name saved successfully!'))
+                .catch(error => console.error('Error!', error.message));
+            // -------------------------------------------------------------
 
-            setTimeout(() => {
-                document.getElementById('welcome-modal').classList.add('hidden');
-            }, 2500);
-        }
+            setTimeout(() => {
+                document.getElementById('welcome-modal').classList.add('hidden');
+            }, 2500);
+        }
 
-        document.getElementById("visitor-name").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                submitName();
-            }
-        });
-    </script>
+        document.getElementById("visitor-name").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                submitName();
+            }
+        });
+    </script>
 </body>
-</html>
+</html> 
