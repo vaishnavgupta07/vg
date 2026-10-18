@@ -15,3 +15,4 @@
 body { 
     font-family: 'Inter', sans-serif; 
 }
+.btn-signout{transition:all .3s ease;cursor:pointer}.btn-signout:hover{background-color:#fee2e2;color:#ef4444}
