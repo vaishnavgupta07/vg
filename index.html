@@ -39,6 +39,7 @@
     </script>
 </head>
 <body oncontextmenu="return false;" class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-500 selection:text-white">
+    
     <!-- Welcome Popup Modal -->
     <div id="welcome-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-900/60 backdrop-blur-sm hidden">
         <div class="bg-white rounded-2xl shadow-2xl w-11/12 max-w-md p-6 transform transition-all text-center">
@@ -74,8 +75,14 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="font-bold text-xl text-brand-900 tracking-tight">VSG.</a>
-                    <!-- Desktop: Visitor Name Display -->
-                    <span id="nav-visitor-name-desktop" class="ml-4 text-sm font-medium text-brand-600 bg-brand-50 px-3 py-1 rounded-full hidden"></span>
+                    
+                    <!-- Desktop: Visitor Name & Signout Display -->
+                    <div id="desktop-user-info" class="hidden ml-4 flex items-center shadow-sm rounded-full">
+                        <span id="nav-visitor-name-desktop" class="text-sm font-medium text-brand-600 bg-brand-50 px-3 py-1 rounded-l-full border border-brand-100 border-r-0"></span>
+                        <button onclick="signOut()" class="btn-signout text-sm text-gray-400 bg-white px-3 py-1 rounded-r-full border border-gray-200 border-l-0" title="Sign Out">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
                 </div>
                 
                 <!-- Desktop Menu -->
@@ -103,8 +110,14 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
-                <!-- Mobile: Visitor Name Display -->
-                <div id="nav-visitor-name-mobile" class="block px-3 py-2 mb-2 text-sm font-medium text-brand-600 bg-brand-50 rounded-md hidden"></div>
+                
+                <!-- Mobile: Visitor Name & Signout Display -->
+                <div id="mobile-user-info" class="hidden px-3 py-2 mb-2 flex justify-between items-center bg-brand-50 rounded-md border border-brand-100">
+                    <span id="nav-visitor-name-mobile" class="text-sm font-medium text-brand-600"></span>
+                    <button onclick="signOut()" class="btn-signout text-xs text-red-500 font-bold bg-white px-2 py-1 rounded shadow-sm border border-red-100 flex items-center gap-1">
+                        <i class="fas fa-sign-out-alt"></i> Sign Out
+                    </button>
+                </div>
                 
                 <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">About</a>
                 <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50">Experience</a>
@@ -383,16 +396,37 @@
             });
         });
 
-        // Welcome Popup Logic
+        // NAYA FUNCTION: Sign Out Logic
+        function signOut() {
+            // LocalStorage se data remove karo
+            localStorage.removeItem('visitorName');
+            localStorage.removeItem('visitorTimestamp');
+            
+            // UI se naam aur signout button hatao
+            document.getElementById('desktop-user-info').classList.add('hidden');
+            document.getElementById('mobile-user-info').classList.add('hidden');
+            
+            // Modal ko wapas start se dikhao
+            document.getElementById('modal-step-1').classList.remove('hidden');
+            document.getElementById('modal-step-2').classList.add('hidden');
+            document.getElementById('visitor-name').value = ''; 
+            document.getElementById('welcome-modal').classList.remove('hidden');
+        }
+
+        // Welcome Popup Logic (Updated for Sign Out layout)
         function updateNavName(name) {
+            const desktopInfo = document.getElementById('desktop-user-info');
+            const mobileInfo = document.getElementById('mobile-user-info');
             const desktopName = document.getElementById('nav-visitor-name-desktop');
             const mobileName = document.getElementById('nav-visitor-name-mobile');
             
-            if (desktopName && mobileName) {
+            if (desktopInfo && mobileInfo) {
                 desktopName.innerText = "Hi, " + name + " 👋";
-                desktopName.classList.remove('hidden');
                 mobileName.innerText = "Hi, " + name + " 👋";
-                mobileName.classList.remove('hidden');
+                
+                // Pura div (naam + signout button) show karo
+                desktopInfo.classList.remove('hidden');
+                mobileInfo.classList.remove('hidden');
             }
         }
 
