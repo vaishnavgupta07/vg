@@ -17,6 +17,13 @@
     <!-- Custom CSS Link (Ab CSS folder ke andar hai) -->
     <link rel="stylesheet" href="notes/style.css">
 
+    <!-- Chatbot ko upar khiskane ke liye CSS -->
+    <style>
+        .crisp-client {
+            bottom: 60px !important;
+        }
+    </style>
+
     <!-- Tailwind Config (Styling Only) -->
     <script>
         tailwind.config = {
@@ -38,7 +45,6 @@
             }
         }
     </script>
-    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="75d4f305-dcf3-4ea4-a8b2-833c0433a580";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </head>
 <body oncontextmenu="return false;" class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-500 selection:text-white">
     
@@ -359,6 +365,12 @@
 
     <!-- Custom JavaScript Link (Ab JS folder ke andar hai) -->
     <script src="notes/script.js"></script>
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="75d4f305-dcf3-4ea4-a8b2-833c0433a580";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    
+    <!-- Crisp Chatbot Script -->
+    <script type="text/javascript">
+        window.$crisp=[];
+        window.CRISP_WEBSITE_ID="75d4f305-dcf3-4ea4-a8b2-833c0433a580";
+        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
 </body>
 </html>
